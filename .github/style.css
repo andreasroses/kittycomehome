@@ -1,0 +1,103 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px; /* Set the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 10px; /* Add padding to the container */
+}
+.flex {
+    display: flex;
+  }
+  img {
+    width: 100%;
+    height: 50%;
+  }
+  #nav-bar {
+    width: 100%; /* Take up the full width of the viewport */
+    background-color: #ffffff;
+    font-family:fantasy;
+
+  }
+
+  ul {
+    list-style-type: none; /* Remove bullet points for list items */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    padding-top: 12px;
+}
+
+  li {
+    display: inline; /* Display list items horizontally */
+}
+.dropdown-link {
+    text-decoration: none; /* Remove underline from links */
+    color: #ffaac6; /* Text color for links */
+    font-size: 2em;
+    display:inline-block;
+    padding-left: 145px;
+    padding-bottom: 12px;
+}
+.dropdown-content a {
+    text-decoration: none; /* Remove underline from links */
+    color: #ffaac6; /* Text color for links */
+    font-size: large;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.dropdown-content li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 20px; /* Add some spacing between items */
+    display:inline-block;
+}
+
+.nav-link{
+    text-decoration: none; /* Remove underline from links */
+    color: #ffaac6; /* Text color for links */
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: right;
+}
+.nav-link-end{
+    text-decoration: none; /* Remove underline from links */
+    color: #3d3737; /* Text color for links */
+    font-size: 1.5em;
+    padding-left: 15px;
+    padding-right: 145px;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    float: right;
+}
+.dropdown-content {
+    display: none;
+    margin-left: 130px;
+    position: absolute;
+    background-color: #fffefe;
+    text-decoration: none;
+    color: #ffaac6;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    display: block;
+    margin-right: 0;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+.vl {
+    border-left: 6px solid #3d3737;
+    height: 30px;
+    float: right;
+    border-width: 2px;
+    margin-top: 5px;
+    background-color: #ffaac6;
+}
