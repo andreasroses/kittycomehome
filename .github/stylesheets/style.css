@@ -7,6 +7,11 @@ html, body {
     margin: 0 auto; /* Center the container horizontally */
     padding: 10px; /* Add padding to the container */
 }
+.justify-content-center{
+    display: flex;
+    justify-content: center;
+}
+
 .flex {
     display: flex;
   }
@@ -18,7 +23,6 @@ html, body {
     width: 100%; /* Take up the full width of the viewport */
     background-color: #ffffff;
     font-family:fantasy;
-
   }
 
   ul {
@@ -100,4 +104,21 @@ html, body {
     border-width: 2px;
     margin-top: 5px;
     background-color: #ffaac6;
+}
+
+#about-img{
+    height: 20em;
+    width: 80%;
+    border-radius: 1.5em;
+    object-fit: contain;
+    margin-top: 2em;
+}
+
+.text-block{
+    color: #3d3737;
+    font-family: "Playpen Sans", serif;
+    font-size: 1.5em;
+}
+.text-align-center{
+    text-align: center;
 }
