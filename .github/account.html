@@ -27,13 +27,35 @@
                 <li><a href="adopt.html" class="nav-link">Adopt</a></li>
                 <li><a href="foster.html" class="nav-link">Foster</a></li>
             </nav>
+        </div>
     </div>
     <!--header image-->
-    <div class="flex">
-    <img src="https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg" alt="cute cat landscape image">
+    <div class="flex maincontainer">
+    <!-- <img id = "headerImg" src="https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg" alt="cute cat landscape image"> -->
+        <div class = "formBox">
+            <form action="" method="get" id="login-form">
+                <table class = "loginForm">
+                    <tr>
+                        <td>
+                            <label for="email">Email:</label><br>
+                            <input type="text" id="email" name="email"><br>
+                        </td>
+                    </tr>
+                    <tr><td>
+                        <label for="pwd">Password:</label><br>
+                        <input type="text" id="pwd" name="pwd"><br>
+                    </td></tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 
-    <div class = "formBox">
+    <!-- <div class = "formBox">
         <form action="" method="get" id="login-form">
             <table class = "loginForm">
                 <tr>
@@ -53,7 +75,7 @@
                 </tr>
             </table>
         </form>
-    </div>
+    </div> -->
 
 </body>
 </html>
