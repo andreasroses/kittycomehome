@@ -32,5 +32,114 @@
     <div class="flex">
     <img src="https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg" alt="cute cat landscape image">
     </div>
+    <!--Kitty carousel gallery-->
+    <div class="gallery-container-carousel">
+        <!--prev button-->
+        <div>
+            <button class="prev-btn">&larr;</button>
+        </div>
+        <!--kitty cards-->
+        <div class="card-container-carousel">
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/profile-placeholder.jpg" alt="A picture of a sad cat.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/profile-placeholder.jpg" alt="A picture of a sad cat.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/profile-placeholder.jpg" alt="A picture of a sad cat.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/profile-placeholder.jpg" alt="A picture of a sad cat.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+            <div class="card-carousel">
+                <div class="kitty-card-carousel">
+                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
+                    <p>Cat Name</p>
+                </div>
+            </div>
+        </div>
+        <!--next button-->
+            <div>
+                <button class="next-btn">&rarr;</button>
+            </div>
+    </div>
+    <!--javascript for carousel-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cardContainer = document.querySelector(".card-container-carousel");
+            const cards = document.querySelectorAll(".card-carousel");
+    
+            let currentIndex = 0;
+    
+            function showCard(index) {
+                const cardWidth = cards[0].offsetWidth;
+                currentIndex = index;
+                cardContainer.style.transition = "transform 0.5s ease-in-out";
+                cardContainer.style.transform = `translateX(${-index * cardWidth}px)`;
+            }
+    
+            function nextCards() {
+                currentIndex = (currentIndex + 4) % cards.length;
+                showCard(currentIndex);
+            }
+    
+            function prevCards() {
+                currentIndex = (currentIndex - 4 + cards.length) % cards.length;
+                showCard(currentIndex);
+            }
+    
+            document.querySelector(".prev-btn").addEventListener("click", prevCards);
+            document.querySelector(".next-btn").addEventListener("click", nextCards);
+    
+            // Initial display
+            showCard(currentIndex);
+        });
+    </script>
 </body>
 </html>

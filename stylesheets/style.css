@@ -241,3 +241,86 @@ h2,h3,h4,h5,h6{
     max-width: 250px;
     height: 100%;
 }
+
+.gallery-container-carousel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 0;
+    
+}
+
+.card-container-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    margin-left: 35px;
+    position: relative;
+    z-index: 1;
+
+}
+
+.card-carousel {
+    flex: 0 0 calc(100% / 4); /* Display 4 cards at a time */
+    max-width: calc(100% / 4);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.prev-btn, .next-btn  {
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    font-family: fantasy, sans-serif;
+    font-size: 2em;
+    z-index: 2; 
+    background-color: #fffefe;
+    border: 1px solid #ffaac6;
+    border-radius: 8px;
+    color:#ffaac6dc;
+    padding-bottom: 10px;
+  
+}
+
+.prev-btn:hover, .next-btn:hover {
+    box-shadow: 5px 10px #ffaac6dc;
+    filter: saturate(150%);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+.kitty-card-carousel {
+    background-color: #fffefe;
+    border: 1px solid #ffaac6;
+    border-radius: 8px;
+    color:#FE4D89;
+    font-family: "Playpen Sans", serif;
+    font-size: large;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 35px;
+    z-index: 3;
+    position: relative;
+    
+}
+
+.card-carousel .kitty-card-carousel:hover {
+    box-shadow: 5px 10px #ffaac6dc;
+    filter: saturate(150%);
+}
+
+.kitty-card-carousel img {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    max-width: 250px;
+    height: 220px;
+}
