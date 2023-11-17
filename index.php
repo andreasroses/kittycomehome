@@ -12,7 +12,7 @@ include 'navbar.php';
     <link rel="stylesheet" href="stylesheets/style.css">
     
 </head>
-<body style="background-image: url(''); background-repeat: repeat; background-size: 10%;">
+<body>
     <div class="flex">
         <?php include 'navbar.php'; ?>
     </div>
