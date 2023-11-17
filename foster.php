@@ -12,7 +12,7 @@
             <nav id="nav-bar">
             <ul> 
                 <li class="dropdown">
-                    <a class="dropdown-link" href="index.html">KittyComeHome</a>
+                    <a class="dropdown-link" href="index.php">KittyComeHome</a>
                     <ul class="dropdown-content">
                         <li><a href="resources.html">Resources</a></li>
                         <li><a href="aboutUs.html">About Us</a></li>
