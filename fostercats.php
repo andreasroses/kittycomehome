@@ -1,5 +1,5 @@
 <?php
-$fostercats = [
+$fostercat = [
     [
         'name' => 'Grumps',
         'gender' => 'Female',
