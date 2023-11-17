@@ -19,7 +19,7 @@
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </li>
-                <li><a href="account.html" class="nav-link-end">Sign-up/Login</a></li>
+                <li><a href="login.html" class="nav-link-end">Sign-up/Login</a></li>
                 <div class="vl"></div>
                 <li><a href="favorites.html" class="nav-link">Favorites</a></li>
                 <li><a href="listCat.html" class="nav-link">List a cat</a></li>
