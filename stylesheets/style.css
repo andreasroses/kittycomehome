@@ -136,6 +136,7 @@ html, body {
     align-items: center;
     margin-left:auto; 
     margin-right:auto;
+    text-align: center;
 }
 
 table.loginForm {
@@ -153,7 +154,6 @@ table.loginForm {
     width:350px; 
     margin-left:auto; 
     margin-right:auto;
-    /* z-index: 2; */
 }
 
 table.loginForm input[type="submit"] {
@@ -172,12 +172,26 @@ tr.fixPadding>td {
     
 }
 
-/* #headerImg{
-    position: absolute;
-        display: flex;
-        flex-wrap: wrap;
-    z-index: 1;
-    } */
+.loginForm td{
+    vertical-align: baseline;
+    padding: 10px;
+}
+
+.loginForm label{
+    text-align: left;
+    display:block;
+}
+
+.defaultWidth {
+    width: 250px; 
+    box-sizing: border-box;
+}
+
+.special-width {
+    width: 115px;
+    box-sizing: border-box; 
+}
+
 
 .maincontainer{
 
