@@ -31,5 +31,19 @@
     <div class="header_img">
         <img src="./images/cat-glare-banner.jpeg" alt="A picture of a cute cat behind pink background.">
     </div>
+    <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
+    <div class="gallery-container">
+        <?php foreach ($cats as $cat): ?>
+            <div class="card">
+                <div class="kitty-card">
+                    <img src="<?php echo $cat['img_src']; ?>" alt="A picture of <?php echo $cat['name']; ?>">
+                    <p>Name: <?php echo $cat['name']; ?></p>
+                    <p>State: <?php echo $cat['state']; ?></p>
+                    <p>Good with Cats: <?php echo $cat['good_with_cats']; ?></p>
+                    <p>Good with Dogs: <?php echo $cat['good_with_dogs']; ?></p>
+                    <p>Good with Kids: <?php echo $cat['good_with_kids']; ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
 </body>
 </html>
