@@ -216,44 +216,6 @@ h2,h3,h4,h5,h6{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
-}
-
-.kitty-card {
-    background-color: #fffefe;
-    border: 1px solid #ffaac6;
-    border-radius: 8px;
-    color:#FE4D89;
-    font-family: "Playpen Sans", serif;
-    font-size: large;
-    max-width: 250px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    
-    margin: 20px;
-}
-
-.card .kitty-card:hover {
-    box-shadow: 5px 10px #ffaac6dc;
-    filter: saturate(150%);
-}
-
-.kitty-card img {
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-    max-width: 250px;
-    height: 100%;
-}
-
-.gallery-container {
-    max-width: 1400px; /* Set the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     position: relative;
     z-index: 0;
     padding-top: 620px;
