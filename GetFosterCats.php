@@ -2,7 +2,7 @@
 $servername = "kch-db.mysql.database.azure.com";
 $username = "adminkch";
 $password = "kchpwd777!";
-$dbname = "KittyComeHome"; // Replace with your actual database name
+$dbname = "kittycomehomedb"; // Replace with your actual database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname, 3306);
