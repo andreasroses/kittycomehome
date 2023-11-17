@@ -34,7 +34,7 @@
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     
     <div class="gallery-container">
-        <?php include 'getFosterCats.php'; ?>
+        <?php include 'GetFosterCats.php'; ?>
     </div>
 </body>
 </html>
