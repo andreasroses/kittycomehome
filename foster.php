@@ -39,11 +39,6 @@
                 <div class="kitty-card">
                     <img src="<?php echo $fostercat['img_src']; ?>" alt="A picture of <?php echo $fostercat['name']; ?>">
                     <p>Name: <?php echo $fostercat['name']; ?></p>
-                    <p>State: <?php echo $fostercat['state']; ?></p>
-                    <p>Gender: <?php echo $fostercat['gender']; ?></p>
-                    <p>Good with Cats: <?php echo $fostercat['good_with_cats']; ?></p>
-                    <p>Good with Dogs: <?php echo $fostercat['good_with_dogs']; ?></p>
-                    <p>Good with Kids: <?php echo $fostercat['good_with_kids']; ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
