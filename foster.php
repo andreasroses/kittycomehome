@@ -27,18 +27,19 @@
                 <li><a href="foster.html" class="nav-link">Foster</a></li>
             </nav>
     </div>
-    <!--header image-->
+    <!--header image
     <div class="header_img">
         <img src="./images/cat-glare-banner.jpeg" alt="A picture of a cute cat behind pink background.">
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
+    -->
     <div class="gallery-container">
         <?php include 'fostercats.php'; ?>
         <?php foreach ($fostercat as $fostercat): ?>
             <div class="card">
                 <div class="kitty-card">
                     <img src="<?php echo $fostercat['img_src']; ?>" alt="A picture of <?php echo $fostercat['name']; ?>">
-                    <p>Name: <?php echo $fostercat['name']; ?></p>
+                    <p><?php echo $fostercat['name']; ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
