@@ -5,10 +5,10 @@ session_start();
 
 if (isset($_SESSION['user_id'])) {
     // User is logged in
-    $navbarLink = '<a href="myaccount.php">My Account</a>';
+    $navbarLink = '<a href="useraccount.php">My Account</a>';
 } else {
     // User is not logged in
-    $navbarLink = '<a href="login.html" class="nav-link-end">Sign-up/Login</a>';
+    $navbarLink = '<a href="login.php" class="nav-link-end">Sign-up/Login</a>';
 }
 ?>
 
@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'])) {
             <a class="dropdown-link" href="index.php">KittyComeHome</a>
             <ul class="dropdown-content">
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
         </li>

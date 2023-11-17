@@ -13,7 +13,7 @@ include 'navbar.php';
 </head>
 <body style="background-image: url(''); background-repeat: repeat; background-size: 10%;">
     <div class="flex">
-    <?php include 'navbar.php'; ?>
+    <?php include 'php-scripts/navbar.php'; ?>
     </div>
     <!--header image-->
     <div class="header_img">

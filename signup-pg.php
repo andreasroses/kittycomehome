@@ -14,7 +14,7 @@ include 'navbar.php';
 </head>
 <body>
     <div class="flex">
-        <?php include 'navbar.php'; ?>
+        <?php include 'php-scripts/navbar.php'; ?>
         </div>
     </div>
     <!--header image-->

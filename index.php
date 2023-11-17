@@ -1,8 +1,3 @@
-<?php
-// index.php
-
-include 'navbar.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +9,7 @@ include 'navbar.php';
 </head>
 <body>
     <div class="flex">
-        <?php include 'navbar.php'; ?>
+        <?php include 'php-scripts/navbar.php'; ?>
     </div>
     <!--header image-->
     <div class="header_img">
