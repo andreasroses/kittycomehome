@@ -41,69 +41,15 @@
         </div>
         <!--kitty cards-->
         <div class="card-container-carousel">
+        <?php include 'fostercats.php'; ?>
+        <?php foreach ($fostercat as $fostercat): ?>
             <div class="card-carousel">
                 <div class="kitty-card-carousel">
-                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
+                    <img src="<?php echo $fostercat['img_src']; ?>" alt="A picture of <?php echo $fostercat['name']; ?>">
+                    <p><?php echo $fostercat['name']; ?></p>
                 </div>
             </div>
-
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/shades-cat.jpg" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/shades-cat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/cool-cat.jpg" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/wirecat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/minion-cat.png" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/angry-cat.png" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/profile-placeholder.jpg" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/shades-cat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/second-profile-placeholder.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
+        <?php endforeach; ?>
         </div>
         <!--next button-->
             <div>

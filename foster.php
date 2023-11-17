@@ -34,7 +34,7 @@
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     -->
     <div class="gallery-container">
-        <?php include 'fostercats.php'; ?>
+    <?php include 'fostercats.php'; ?>
         <?php foreach ($fostercat as $fostercat): ?>
             <div class="card">
                 <div class="kitty-card">
