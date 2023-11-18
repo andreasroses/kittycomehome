@@ -10,12 +10,12 @@
     <div class="flex">
     <?php include 'php-scripts/navbar.php'; ?>
     </div>
-    <!--header image
+    <!--header image-->
     <div class="header_img">
         <img src="./images/cat-glare-banner.jpeg" alt="A picture of a cute cat behind pink background.">
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
-    -->
+    
     
     <div class="gallery-container">
         <!-- Loops through cat names -->
@@ -30,6 +30,8 @@
         // Check if the query was successful
         if (!$result) {
             die("Error in query: " . $db_conn->error);
+        }else {
+            echo "Test query executed successfully.";
         }
 
         // Loop through cat names
