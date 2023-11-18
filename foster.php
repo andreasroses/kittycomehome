@@ -7,6 +7,10 @@ include 'config.php';
 // Query to fetch cat information from the database
 $query = "SELECT cat_name, cat_img_src FROM fostercat";
 $result = $db_conn->query($query);
+// Check if the query was successful
+if (!$result) {
+    die("Error in query: " . $db_conn->error);
+}
 
 ?>
 <!DOCTYPE html>
@@ -30,6 +34,7 @@ $result = $db_conn->query($query);
     <div class="gallery-container">
         <!-- Loops through cat names -->
         <?php
+        if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             ?>
             <div class="card">
@@ -40,6 +45,10 @@ $result = $db_conn->query($query);
             </div>
             <?php
         }
+    } else {
+        // Display a message if there are no cat cards
+        echo "<p>No cat cards available.</p>";
+    }
         ?>
     </div>
 </body>
