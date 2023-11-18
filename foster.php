@@ -24,7 +24,7 @@
         echo'About to test database connection';
         // Include the database configuration
         include 'php-scripts/config.php';
-        echo "Connected to the database successfully."; // debug
+        echo $conn_error; // debug
         // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
         $result = $mysqli->query($query);
