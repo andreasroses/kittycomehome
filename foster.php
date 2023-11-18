@@ -38,36 +38,7 @@
         // Close the database connection
         $mysqli->close();
         ?>
-        <!--
-        // Query to fetch cat information from the database
-        $query = "SELECT cat_name, cat_img_src FROM fostercat";
-        $result = $mysqli->query($query);
 
-        // Check if the query was successful
-        if (!$result) {
-            die("Error in query: " . $mysqli->error);
-        }else {
-           echo "Test query executed successfully.";
-        }
-        // Loop through cat names
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-               ?>
-            <div class="card">
-                   <div class="kitty-card">
-                        <img src="/<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                        <p><?php echo $row['cat_name']; ?></p>
-                    </div>
-                </div>
-                <?php
-            }
-        } else {
-            // Display a message if there are no cat cards
-            echo "<p>No cat cards available.</p>";
-        }
-        // Close the database connection
-        $mysqli->close();
-        ?>
     </div>
 </body>
 </html>
