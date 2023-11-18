@@ -17,7 +17,7 @@
     
     <!-- header image -->
     <div class="justify-content-center" >
-        <img src="images/filler-image.jpg" id="about-img">
+        <img src="images/filler.jpg" id="about-img">
     </div>
     <div>
         <hr style="margin: 2em">
