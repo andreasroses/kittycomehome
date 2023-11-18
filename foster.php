@@ -2,6 +2,12 @@
 // foster.php
 
 include 'navbar.php';
+include 'config.php';
+
+// Query to fetch cat information from the database
+$query = "SELECT cat_name, cat_img_src FROM fostercat";
+$result = $db_conn->query($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
