@@ -20,9 +20,20 @@
     <div class="gallery-container">
         <!-- Loops through cat names -->
         <?php
-        // Include the database configuration
-        include 'php-scripts/config.php';
-        echo "Connected to the database successfully."; // debug
+        // Database configuration
+        $db_host = 'kch-db.mysql.database.azure.com';
+        $db_user = 'adminkch';
+        $db_pass = 'kchpwd777!';
+        $db_name = 'kittycomehomedb';
+
+        // Create a connection
+        $db_conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+
+        // Check the database connection
+        if ($db_conn->connect_error) {
+            die("Connection failed: " . $db_conn->connect_error);
+        }
+
         // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
         $result = $db_conn->query($query);
