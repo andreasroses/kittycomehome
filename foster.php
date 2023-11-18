@@ -38,7 +38,18 @@
         // Close the database connection
         $mysqli->close();
         ?>
-        <!--// Loop through cat names
+        <!--
+        // Query to fetch cat information from the database
+        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+        $result = $mysqli->query($query);
+
+        // Check if the query was successful
+        if (!$result) {
+            die("Error in query: " . $mysqli->error);
+        }else {
+            echo "Test query executed successfully.";
+        }
+        // Loop through cat names
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 ?>
