@@ -27,7 +27,7 @@ if (isset($_SESSION['user_id'])) {
         <div class="vl"></div>
         <li><a href="favorites.html" class="nav-link">Favorites</a></li>
         <li><a href="listCat.html" class="nav-link">List a cat</a></li>
-        <li><a href="adopt.html" class="nav-link">Adopt</a></li>
+        <li><a href="adopt.php" class="nav-link">Adopt</a></li>
         <li><a href="foster.php" class="nav-link">Foster</a></li>
     </ul>
 </nav>

@@ -1,23 +1,29 @@
 <?php
-
+session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once("config.php");
     // get user data
+    $email = $_POST["email"];
+    $password = $_POST["password"];
     $sql = "SELECT * FROM accounts WHERE email = '$email'";
-    
-    if ($db_conn->query($sql) === TRUE) {
-        echo "User registered successfully!";
-        // Fetch the user ID from the database
-        $user_id = $db_conn->insert_id;
+    $result = $db_conn->query($sql);
+    if ($result->num_rows == 1) {
+        // User found, check the password
+        $row = $result->fetch_assoc();
+        if ($password == $row["password"]) {
+            // Password is correct, log in the user
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['fname'] = $row['fname'];
+            $_SESSION['lname'] = $row['lname'];
 
-        // Set the user ID in the session
-        $_SESSION['user_id'] = $user_id;
-
-        // Redirect to a welcome page or any other desired page
-        header("Location: welcome.php");
-        exit();
+            // Redirect to the user's account page
+            header("Location: useraccount.php");
+            exit();
+        } else {
+            $error = "Invalid password";
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        $error = "User not found";
     }
 }
 ?>
