@@ -29,7 +29,8 @@
 
         // Check if the query was successful
         if (!$result) {
-            die("Error in query: " . $mysqli->error);
+            echo "Error in query: " . $mysqli->error;
+            //die("Error in query: " . $mysqli->error);
         }else {
             echo "Test query executed successfully.";
         }
