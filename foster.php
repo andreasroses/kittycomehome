@@ -1,7 +1,7 @@
 <?php
 // foster.php
 
-include 'php-scripts/navbar.php';
+include 'navbar.php';
 include 'php-scripts/config.php';
 
 // Query to fetch cat information from the database
