@@ -32,7 +32,7 @@
         if ($db_conn->connect_error) {
             die("Connection failed: " . $db_conn->connect_error);
         }
-
+        echo "Connected successfully";  // ebugging
         // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
         $result = $db_conn->query($query);
@@ -41,7 +41,7 @@
         if (!$result) {
             die("Error in query: " . $db_conn->error);
         }
-
+        echo "Query executed successfully";  // debugging
         // Loop through cat names
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
