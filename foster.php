@@ -50,6 +50,8 @@
             // Display a message if there are no cat cards
             echo "<p>No cat cards available.</p>";
         }
+        // Close the database connection
+        $mysqli->close();
         ?>
     </div>
 </body>
