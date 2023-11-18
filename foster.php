@@ -22,7 +22,19 @@ include 'navbar.php';
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     
     <div class="gallery-container">
-        <?php include 'GetFosterCats.php'; ?>
+        <!-- Loops through cat names -->
+        <?php
+        while ($row = $result->fetch_assoc()) {
+            ?>
+            <div class="card">
+                <div class="kitty-card">
+                    <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                    <p><?php echo $row['cat_name']; ?></p>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
     </div>
 </body>
 </html>
