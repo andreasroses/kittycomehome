@@ -20,6 +20,7 @@
     <div class="gallery-container">
         <!-- Loops through cat names -->
         <?php
+        echo'About to test database connection';
         // Include the database configuration
         include 'php-scripts/config.php';
         echo "Connected to the database successfully."; // debug
