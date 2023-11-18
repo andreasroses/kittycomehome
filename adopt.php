@@ -20,18 +20,6 @@
         <img src="./images/cat-paws-banner.jpeg" alt="A picture of a cute cat behind pink background.">
       </div>
       <div><button><a href="./images/adoption-form.pdf" class ="home-sub-header">Download Adoption Form</a></button></div>
-      <!--testing -->
-      <div class="gallery-container">
-          <!-- Loops through cat names -->
-          <?php
-          // Include the database configuration
-          include 'php-scripts/config.php';
-          echo "Connected to the database successfully."; // debug
-
-          // Close the database connection
-          $mysqli->close(); 
-          ?>
-      </div>
       
       <div class="gallery-container">
   
