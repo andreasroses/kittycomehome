@@ -12,7 +12,7 @@
     <div class="flex">
         <?php include 'php-scripts/navbar.php';
         include 'php-scripts/config.php';
-        echo '$conn_error';
+        echo '<p>$conn_error<p>';
         ?>
     </div>
     <div class="header_img">
