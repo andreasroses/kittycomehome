@@ -16,10 +16,12 @@
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     -->
-    
+    <?php echo'Before testing database connection';?>
     <div class="gallery-container">
+        
         <!-- Loops through cat names -->
         <?php
+        echo'About to test database connection';
         // Include the database configuration
         include 'php-scripts/config.php';
         echo "Connected to the database successfully."; // debug
