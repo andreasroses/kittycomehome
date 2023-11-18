@@ -25,8 +25,21 @@
         // Include the database configuration
         include 'php-scripts/config.php';
         echo "Connected to the database successfully."; // debug
+        // Query to fetch cat information from the database
+        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+        $result = $mysqli->query($query);
 
-        //Query to fetch cat information from the database
+        // Check if the query was successful
+        if (!$result) {
+            die("Error in query: " . $mysqli->error);
+        }else {
+            echo "Test query executed successfully.";
+        }
+        // Close the database connection
+        $mysqli->close();
+        ?>
+        <!--
+        // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
         $result = $mysqli->query($query);
 
