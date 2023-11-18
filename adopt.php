@@ -15,12 +15,12 @@
       <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
       </div>
-      <!--header image
+      header image
       <div class="header_img">
         <img src="./images/cat-paws-banner.jpeg" alt="A picture of a cute cat behind pink background.">
       </div>
       <div><button><a href="./images/adoption-form.pdf" class ="home-sub-header">Download Adoption Form</a></button></div>
-      -->
+      
       <div class="gallery-container">
           <!-- <div class="search-container justify-content-center">
               <form action="/action_page.php">
