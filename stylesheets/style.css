@@ -395,3 +395,14 @@ body {
     box-shadow: 5px 10px #ffaac6dc;
     filter: saturate(150%);
 }
+
+.adoption-form-container {
+    text-align: left;
+    max-width: 500px;
+    margin: auto;
+    line-height: 2em;
+}
+
+.adoption-form h1,h2,h3,h4,h5 {
+    text-align: left;
+}
