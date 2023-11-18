@@ -9,7 +9,7 @@ define('DB_NAME', 'kittycomehomedb');
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
 // Check the database connection
-if ($db_conn->connect_error) {
+if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 } 
 

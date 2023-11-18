@@ -29,11 +29,11 @@
         echo "Connected to the database successfully."; // debug
         // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
-        $result = $db_conn->query($query);
+        $result = $mysqli->query($query);
 
         // Check if the query was successful
         if (!$result) {
-            die("Error in query: " . $db_conn->error);
+            die("Error in query: " . $mysqli->error);
         }else {
             echo "Test query executed successfully.";
         }
