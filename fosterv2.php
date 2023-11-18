@@ -21,7 +21,7 @@
     </div>
     <div class="gallery-container">
         <?php
-            $select_prod="SELECT * from products";
+            $select_prod="SELECT * from fostercat";
             $result_prod=mysqli_query($mysqli,$select_prod);
             while($row_data=mysqli_fetch_assoc($result_prod)){
             $cat_name=$row_data['cat_name'];
