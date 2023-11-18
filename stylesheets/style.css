@@ -243,7 +243,7 @@ body {
     border: 3px solid #fccddd;
     box-shadow: 5px 3px #8b8181dc;
     border-radius: 8px;
-    color:#ffaac6dc;
+    color:#ffaac6;
     font-family: fantasy;
     font-size: large;
     max-width: 250px;
@@ -401,8 +401,12 @@ body {
     max-width: 500px;
     margin: auto;
     line-height: 2em;
+    color: #3d3737;
+    font-family: "Playpen Sans", serif;
 }
 
 .adoption-form h1,h2,h3,h4,h5 {
     text-align: left;
+    color: #3d3737;
+    font-family: "Playpen Sans", serif;
 }
