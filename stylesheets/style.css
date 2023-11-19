@@ -410,3 +410,26 @@ body {
     color: #3d3737;
     font-family: "Playpen Sans", serif;
 }
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.search-container button {
+    padding: 8px 12px;
+    background-color: #ffaac6;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}

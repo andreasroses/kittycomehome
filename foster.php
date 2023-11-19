@@ -12,9 +12,16 @@
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
+    <!-- Search form added here -->
+    <div class="search-container">
+        <form method="GET" action="">
+            <input type="text" name="search" placeholder="Search cats...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <!--header image-->
     <div class="header_img">
-        <img src="./images/cat-glare-banner.jpeg" alt="A picture of a cute cat behind pink background.">
+        <img src="./images/cat-paws-banner" alt="A picture of cute cat paws behind pink background.">
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     
@@ -23,9 +30,19 @@
         <?php
         // Include the database configuration
         include 'php-scripts/config.php';
+
+        // Check if a search query is submitted
+        if (isset($_GET['search'])) {
+        $search = mysqli_real_escape_string($db_conn, $_GET['search']);
+    
+        // Query to fetch cat information based on the search query
+        $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE cat_name LIKE '%$search%'";
+        } else {
         // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
+        }
         $result = $db_conn->query($query);
+
         // Loop through cat names
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -37,10 +54,10 @@
             </div>
         </div>
         <?php
-            }
+        }
         } else {
             // Display a message if there are no cat cards
-            echo "<p>No cat cards available.</p>";
+            echo "<p>No matching cat cards available.</p>";
         }
         // Close the database connection
         $db_conn->close();
