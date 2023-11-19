@@ -22,6 +22,10 @@
         <div>
             <button class="prev-btn">&larr;</button>
         </div>
+          <!--next button-->
+        <div>
+            <button class="next-btn">&rarr;</button>
+        </div>
         <!--kitty cards-->
             <?php
         // Include the database configuration
@@ -50,10 +54,6 @@
             $db_conn->close();
             ?>
         </div>
-        <!--next button-->
-            <div>
-                <button class="next-btn">&rarr;</button>
-            </div>
     </div>
     <!--javascript for carousel-->
     <script>
