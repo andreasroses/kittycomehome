@@ -12,18 +12,25 @@
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
-    <!-- Search form added here -->
-    <div class="search-container">
-        <form method="GET" action="">
-            <input type="text" name="search" placeholder="Search cats...">
-            <button type="submit">Search</button>
-        </form>
-    </div>
     <!--header image-->
     <div class="header_img">
         <img src="./images/cat-paws-banner" alt="A picture of cute cat paws behind pink background.">
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
+    <!-- Search form -->
+    <div class="search-container">
+            <form method="GET" action="">
+            <label for="searchBy">Search By:</label>
+            <select name="searchBy" id="searchBy">
+                <option value="cat_name">Cat Name</option>
+                <option value="cat_gender">Gender</option>
+                <option value="cat_isgoodwithcats">Is Good with Cats</option>
+                <option value="cat_isgoodwithdogs">Is Good with Dogs</option>
+                <option value="cat_isgoodwithkids">Is Good with Kids</option>
+            </select>
+        <button type="submit">Search</button>
+            </form>
+    </div>
     
     <div class="gallery-container">
         <!-- Loops through cat names -->
@@ -32,13 +39,13 @@
         include 'php-scripts/config.php';
 
         // Check if a search query is submitted
-        if (isset($_GET['search'])) {
-        $search = mysqli_real_escape_string($db_conn, $_GET['search']);
-    
-        // Query to fetch cat information based on the search query
-        $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE cat_name LIKE '%$search%'";
+        if (isset($_GET['searchBy'])) {
+        $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
+
+        // Query to fetch cat information based on the selected search field
+        $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
         } else {
-        // Query to fetch cat information from the database
+        // Query to fetch all cat information
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
         }
         $result = $db_conn->query($query);
