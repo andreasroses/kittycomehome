@@ -383,7 +383,7 @@ body {
     border-radius: 8px;
     text-align: center;
     margin-top: 625px;
-    margin-left: 10px;
+    margin-left: 525px;
     font-size: large;
     font-family: fantasy;
     cursor: pointer;
@@ -432,6 +432,7 @@ body {
     display: flex;
     align-items: center;
     padding-right: 5px;
+    padding-left: 5px;
     border-color: #ffaac6;
 }
 
@@ -441,6 +442,7 @@ body {
 
 .search-container button {
     padding: 8px 12px;
+    padding-left: 12px;
     margin-left: 8px;
     background-color: #ffaac6;
     color: #ffffff;
