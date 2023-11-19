@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined Page</title>
+    <title>aboutUs</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="flex">
+        <?php include 'php-scripts/navbar.php'; ?>
+    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
     <style>
         /* Add your custom styles here */
         body {
@@ -40,25 +53,7 @@
         .faq-question.active {
             background-color: #FE4D89;
         }
-
-        /* Additional styles for aboutUs section */
-        .flex {
-            /* Add styles for the flex container */
-        }
-
-        /* Include stylesheets and fonts for aboutUs section */
-        /* You can customize the styles and paths as needed */
-        .flex {
-            /* Add styles for the flex container */
-        }
-
     </style>
-
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -81,10 +76,6 @@
 
     <!-- Add more FAQ items as needed -->
 
-</div>
-
-<div class="flex">
-    <?php include 'php-scripts/navbar.php'; ?>
 </div>
 
 <script>
