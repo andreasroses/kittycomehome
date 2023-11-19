@@ -290,7 +290,6 @@ body {
 
 .card-carousel {
     flex: 0 0 auto;
-    max-width: calc(100% / 4);
     box-sizing: border-box;
     position: relative;
 }
@@ -344,7 +343,6 @@ body {
     border-radius: 8px;
     color:#ffaac6dc;
     font-family: fantasy;
-    width: 250px;
     font-size: x-large;
     display: flex;
     justify-content: center;
