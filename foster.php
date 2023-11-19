@@ -54,10 +54,12 @@
                 $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
                 break;
             case 'cat_Male':
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = ('Male')";
+                $searchBy = 'Male';
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Male'";
                 break;
             case 'cat_Female':
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = ('Female')";
+                $searchBy = 'Female';
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Female'";
                 break;
             default:
                 $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
