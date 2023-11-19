@@ -14,7 +14,7 @@
     </div>
     <!--header image-->
     <div class="header_img">
-        <img src="./images/cat-paws-banner" alt="A picture of cute cat paws behind pink background.">
+        <img src="./images/cat-paws-banner.jpeg" alt="A picture of cute cat paws behind pink background.">
     </div>
     <!-- Search form -->
     <div class="search-container">
@@ -47,10 +47,10 @@
                 $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
                 break;
             case 'cat_Male':
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy IN ('Male')";
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = ('Male')";
                 break;
             case 'cat_Female':
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy IN ('Female')";
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = ('Female')";
                 break;
             default:
                 $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
