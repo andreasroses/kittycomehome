@@ -282,8 +282,8 @@ body {
 .card-container-carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    margin-left: 25px;
-    padding-right: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
     position: relative;
     z-index: 1;
 }
