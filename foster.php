@@ -10,20 +10,17 @@
     <div class="flex">
     <?php include 'php-scripts/navbar.php'; ?>
     </div>
-    <!--header image
+    <!--header image-->
     <div class="header_img">
         <img src="./images/cat-glare-banner.jpeg" alt="A picture of a cute cat behind pink background.">
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
-    -->
-    <?php echo'Before testing database connection'; //debug ?> 
+    
     <div class="gallery-container">
         <!-- Loops through cat names -->
         <?php
-        echo'About to test database connection';
         // Include the database configuration
         include 'php-scripts/config.php';
-        echo "Connected to the database successfully."; // debug
         // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
         $result = $mysqli->query($query);
@@ -31,8 +28,6 @@
         // Check if the query was successful
         if (!$result) {
             die("Error in query: " . $mysqli->error);
-        }else {
-            echo "Test query executed successfully.";
         }
         // Loop through cat names
         if ($result->num_rows > 0) {
