@@ -345,12 +345,10 @@ body {
     color:#ffaac6dc;
     font-family: fantasy;
     font-size: x-large;
-    max-width: 250px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-left: 35px;
     z-index: 3;
     position: relative;
 }
