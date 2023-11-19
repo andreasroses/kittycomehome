@@ -37,8 +37,8 @@
             <input type="checkbox" name="catIsGoodWithKids">
             <br>
             <!-- cat_img_src -->
-            <label for="catImgSrc">Image URL:</label>
-            <input type="text" name="catImgSrc" required>
+            <label for="catImg">Upload Image:</label>
+            <input type="file" name="catImg" accept="image/*" required>
             <br>
             <!-- Submit button -->
             <input type="submit" value="Submit">
