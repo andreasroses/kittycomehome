@@ -232,7 +232,7 @@ h2,h3,h4,h5,h6{
     justify-content: center;
     position: relative;
     z-index: 0;
-    padding-top: 620px;
+    padding-top: 650px;
 
 }
 body {
@@ -378,13 +378,13 @@ body {
     background-color: #ffffff;
     border: 3px solid #fccddd;
     box-shadow: 5px 3px #8b8181dc;
-    padding: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
     width: 400px;
     border-radius: 8px;
     text-align: center;
-    margin-top: 520px;
+    margin-top: 620px;
     margin-left: 10px;
-    font-size: x-large;
+    font-size: large;
     font-family: fantasy;
     cursor: pointer;
     z-index: 4;
@@ -420,7 +420,7 @@ body {
     width: 400px;
     border-radius: 8px;
     text-align: center;
-    margin-top: 550px;
+    margin-top: 620px;
     margin-left: 525px;
     font-size: x-large;
     font-family: fantasy;

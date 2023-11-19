@@ -22,8 +22,8 @@
             <form method="GET" action="">
             <label for="searchBy">Search By:</label>
             <select name="searchBy" id="searchBy">
-                <option value="cat_gender">Male</option>
-                <option value="cat_gender">Female</option>
+                <option value="cat_Male">Male</option>
+                <option value="cat_Female">Female</option>
                 <option value="cat_isgoodwithcats">Is Good with Cats</option>
                 <option value="cat_isgoodwithdogs">Is Good with Dogs</option>
                 <option value="cat_isgoodwithkids">Is Good with Kids</option>
@@ -47,8 +47,11 @@
             case 'cat_isgoodwithkids':
                 $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
                 break;
-            case 'cat_gender':
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy IN ('Male', 'Female')";
+            case 'cat_Male':
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy IN ('Male')";
+                break;
+            case 'cat_Female':
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy IN ('Female')";
                 break;
             default:
                 $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
