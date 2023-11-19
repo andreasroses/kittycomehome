@@ -17,7 +17,6 @@
         <img src="./images/cat-glare-banner.jpeg" alt="A picture of a cute cat behind pink background.">
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
-    -->
     
     <div class="gallery-container">
         <!-- Loops through cat names -->
