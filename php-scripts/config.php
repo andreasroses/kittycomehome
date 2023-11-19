@@ -12,6 +12,6 @@ if ($db_conn->connect_error) {
     $conn_error = $db_conn->connect_error;
 }
 // Set charset to utf8mb4 for proper Unicode support
-$mysqli->set_charset("utf8mb4");
+$db_conn->set_charset("utf8mb4");
 
 ?>

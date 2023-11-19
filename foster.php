@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>foster</title>
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
+
 <body style="background-image: url(''); background-repeat: repeat; background-size: 10%;">
     <div class="flex">
-    <?php include 'php-scripts/navbar.php'; ?>
+        <?php include 'php-scripts/navbar.php'; ?>
     </div>
     <!--header image
     <div class="header_img">
@@ -29,13 +31,13 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 ?>
-                <div class="card">
-                    <div class="kitty-card">
-                        <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                        <p><?php echo $row['cat_name']; ?></p>
-                    </div>
-                </div>
-                <?php
+        <div class="card">
+            <div class="kitty-card">
+                <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                <p><?php echo $row['cat_name']; ?></p>
+            </div>
+        </div>
+        <?php
             }
         } else {
             // Display a message if there are no cat cards
@@ -46,4 +48,5 @@
         ?>
     </div>
 </body>
+
 </html>
