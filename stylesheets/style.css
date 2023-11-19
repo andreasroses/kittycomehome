@@ -361,7 +361,7 @@ body {
 }
 
 .kitty-card-carousel img {
-    max-width: 250px;
+    width: 250px;
     height: 220px;
     border-radius: 5px;
 }
