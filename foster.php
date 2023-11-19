@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>foster</title>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var selectedValue = "<?php echo isset($_GET['searchBy']) ? $_GET['searchBy'] : 'cat_Male'; ?>";
+            $("#searchByDropdown").val(selectedValue);
+        });
+    </script>
 </head>
 
 <body style="background-image: url(''); background-repeat: repeat; background-size: 10%;">
