@@ -20,15 +20,15 @@
     <!-- Search form -->
     <div class="search-container">
             <form method="GET" action="">
-            <label for="searchBy">Search By:  </label>
-            <select name="searchBy" id="searchBy">
+            <select name="searchBy" id="searchByDropdown"class="search-dropdown">
                 <option value="cat_Male">Male</option>
                 <option value="cat_Female">Female</option>
-                <option value="cat_isgoodwithcats">Is Good with Cats</option>
-                <option value="cat_isgoodwithdogs">Is Good with Dogs</option>
-                <option value="cat_isgoodwithkids">Is Good with Kids</option>
+                <option value="cat_isgoodwithcats">Good with Cats</option>
+                <option value="cat_isgoodwithdogs">Good with Dogs</option>
+                <option value="cat_isgoodwithkids">Good with Kids</option>
             </select>
         <button type="submit">Search</button>
+        <button><a href="./images/adoption-form.pdf">Download Adoption Form</a></button>
             </form>
     </div>
     

@@ -410,15 +410,16 @@ body {
     color: #3d3737;
     font-family: "Playpen Sans", serif;
 }
+
 .search-container {
     color:#ffaac6;
     position: absolute;
     background-color: #ffffff;
     border: 3px solid #fccddd;
     box-shadow: 5px 3px #8b8181dc;
-    padding: 10px 10px 10px 10px;
-    width: 400px;
+    padding: 20px 50px 25px 50px;
     border-radius: 8px;
+    display: inline-block;
     text-align: center;
     margin-top: 615px;
     margin-left: 525px;
@@ -428,24 +429,47 @@ body {
     z-index: 4;
 }
 
+.search-container:hover {
+    box-shadow: 5px 10px #ffaac6dc;
+    filter: saturate(150%);
+}
+
 .search-container form {
-    display: flex;
+    display: inline-block;
     align-items: center;
     padding-right: 5px;
     padding-left: 5px;
     border-color: #ffaac6;
 }
 
+#searchByDropdown {
+    padding: 8px;
+    font-size: 16px;
+    border: 5px solid #ffdee9;
+    box-shadow: 5px 10px #fccddd;
+    color:#ffaac6dc;
+    font-family: fantasy;
+}
+
 .search-container input {
     padding: 8px;
 }
 
+.search-container a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .search-container button {
     padding: 8px 12px;
-    padding-left: 12px;
-    margin-left: 8px;
+    margin-left: 30px;
     background-color: #ffaac6;
+    box-shadow: 5px 3px #8b8181dc;
     color: #ffffff;
     border: none;
     cursor: pointer;
+    display: inline-block;
+    font-family: fantasy;
+    border-radius: 8px;
+    font-size: large;
 }
