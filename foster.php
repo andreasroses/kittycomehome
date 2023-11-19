@@ -16,12 +16,12 @@
     </div>
     <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     -->
-    <?php echo'Before testing database connection'; //debug ?> 
     <div class="gallery-container">
         <!-- Loops through cat names -->
         <?php
         // Include the database configuration
         include 'php-scripts/config.php';
+        echo '$conn_error';
         // Query to fetch cat information from the database
         $query = "SELECT cat_name, cat_img_src FROM fostercat";
         $result = $db_conn->query($query);
