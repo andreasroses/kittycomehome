@@ -316,7 +316,7 @@ body {
 
 .prev-btn {
     left: 15px;
-    border: 5px solid #ffdee9;
+    border: 5px solid #ffeff5;
     box-shadow: 5px 10px #fccddd;
     color:#ffaac6dc;
     background-color: #ffdee9;
@@ -328,7 +328,7 @@ body {
 
 .next-btn {
     right: 10px;
-    border: 5px solid #ffdee9;
+    border: 5px solid #ffeff5;
     box-shadow: 5px 10px #fccddd;
     color:#ffaac6dc;
     background-color: #ffdee9;
