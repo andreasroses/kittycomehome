@@ -27,7 +27,7 @@
                 <option value="cat_isgoodwithkids">Good with Kids</option>
             </select>
         <button type="submit">Search</button>
-        <button><a href="./images/adoption-form.pdf">Download Adoption Form</a></button>
+        <button><a href="./images/adoption-form.pdf">Download Adoption/Foster Form</a></button>
             </form>
     </div>
     
