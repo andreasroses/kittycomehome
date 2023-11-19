@@ -22,8 +22,8 @@
             <form method="GET" action="">
             <label for="searchBy">Search By:</label>
             <select name="searchBy" id="searchBy">
-                <option value="cat_name">Cat Name</option>
-                <option value="cat_gender">Gender</option>
+                <option value="cat_gender">Male</option>
+                <option value="cat_gender">Female</option>
                 <option value="cat_isgoodwithcats">Is Good with Cats</option>
                 <option value="cat_isgoodwithdogs">Is Good with Dogs</option>
                 <option value="cat_isgoodwithkids">Is Good with Kids</option>
@@ -39,15 +39,25 @@
         include 'php-scripts/config.php';
 
         // Check if a search query is submitted
-        if (isset($_GET['searchBy'])) {
-        $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
-
-        // Query to fetch cat information based on the selected search field
-        $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
-        } else {
-        // Query to fetch all cat information
-        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+    if (isset($_GET['searchBy'])) {
+    $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
+        switch ($searchBy) {
+            case 'cat_isgoodwithcats':
+            case 'cat_isgoodwithdogs':
+            case 'cat_isgoodwithkids':
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
+                break;
+            case 'cat_gender':
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy IN ('Male', 'Female')";
+                break;
+            default:
+                $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
+                break;
         }
+    } else {
+        // Default query to fetch all cat information
+        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+    }
         $result = $db_conn->query($query);
 
         // Loop through cat names
