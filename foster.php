@@ -14,21 +14,20 @@
     </div>
     <!--header image-->
     <div class="header_img">
-        <img src="./images/cat-paws-banner" alt="A picture of cute cat paws behind pink background.">
+        <img src="./images/cat-paws-banner.jpeg" alt="A picture of cute cat paws behind pink background.">
     </div>
-    <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     <!-- Search form -->
     <div class="search-container">
             <form method="GET" action="">
-            <label for="searchBy">Search By:</label>
-            <select name="searchBy" id="searchBy">
-                <option value="cat_name">Cat Name</option>
-                <option value="cat_gender">Gender</option>
-                <option value="cat_isgoodwithcats">Is Good with Cats</option>
-                <option value="cat_isgoodwithdogs">Is Good with Dogs</option>
-                <option value="cat_isgoodwithkids">Is Good with Kids</option>
+            <select name="searchBy" id="searchByDropdown"class="search-dropdown">
+                <option value="cat_Male">Male</option>
+                <option value="cat_Female">Female</option>
+                <option value="cat_isgoodwithcats">Good with Cats</option>
+                <option value="cat_isgoodwithdogs">Good with Dogs</option>
+                <option value="cat_isgoodwithkids">Good with Kids</option>
             </select>
         <button type="submit">Search</button>
+        <button><a href="./images/adoption-form.pdf">Download Adoption Form</a></button>
             </form>
     </div>
     
@@ -39,15 +38,28 @@
         include 'php-scripts/config.php';
 
         // Check if a search query is submitted
-        if (isset($_GET['searchBy'])) {
-        $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
-
-        // Query to fetch cat information based on the selected search field
-        $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
-        } else {
-        // Query to fetch all cat information
-        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+    if (isset($_GET['searchBy'])) {
+    $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
+        switch ($searchBy) {
+            case 'cat_isgoodwithcats':
+            case 'cat_isgoodwithdogs':
+            case 'cat_isgoodwithkids':
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
+                break;
+            case 'cat_Male':
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = ('Male')";
+                break;
+            case 'cat_Female':
+                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = ('Female')";
+                break;
+            default:
+                $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
+                break;
         }
+    } else {
+        // Default query to fetch all cat information
+        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+    }
         $result = $db_conn->query($query);
 
         // Loop through cat names
