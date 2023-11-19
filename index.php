@@ -23,70 +23,32 @@
             <button class="prev-btn">&larr;</button>
         </div>
         <!--kitty cards-->
+            <?php
+        // Include the database configuration
+        include 'php-scripts/config.php';
+        // Default query to fetch all cat information
+        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+        $result = $db_conn->query($query);
+        // Loop through cat names
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                ?>
         <div class="card-container-carousel">
             <div class="card-carousel">
                 <div class="kitty-card-carousel">
-                    <img src="./images/sad-cat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
+                    <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                    <p><?php echo $row['cat_name']; ?></p>
                 </div>
             </div>
-
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/shades-cat.jpg" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/shades-cat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/cool-cat.jpg" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/wirecat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/minion-cat.png" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/angry-cat.png" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/sad-cat.jpg" alt="A picture of a sad cat.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/shades-cat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
-            <div class="card-carousel">
-                <div class="kitty-card-carousel">
-                    <img src="./images/cool-cat.jpg" alt="A picture of a cat smoking.">
-                    <p>Cat Name</p>
-                </div>
-            </div>
+            <?php
+            }
+            } else {
+                // Display a message if there are no cat cards
+                echo "<p>No matching cat cards available.</p>";
+            }
+            // Close the database connection
+            $db_conn->close();
+            ?>
         </div>
         <!--next button-->
             <div>
