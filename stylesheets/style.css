@@ -411,12 +411,21 @@ body {
     font-family: "Playpen Sans", serif;
 }
 .search-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 620px;
-    margin-left: 10px;
+    color:#ffaac6;
     position: absolute;
-    z-index: 5;
+    background-color: #ffffff;
+    border: 3px solid #fccddd;
+    box-shadow: 5px 3px #8b8181dc;
+    padding: 10px 10px 10px 10px;
+    width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 550px;
+    margin-left: 525px;
+    font-size: x-large;
+    font-family: fantasy;
+    cursor: pointer;
+    z-index: 4;
 }
 
 .search-container form {
