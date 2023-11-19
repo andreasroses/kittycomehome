@@ -20,7 +20,7 @@
     <!-- Search form -->
     <div class="search-container">
             <form method="GET" action="">
-            <label for="searchBy">Search By:</label>
+            <label for="searchBy">Search By:  </label>
             <select name="searchBy" id="searchBy">
                 <option value="cat_Male">Male</option>
                 <option value="cat_Female">Female</option>
