@@ -282,7 +282,7 @@ body {
 .card-container-carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    margin-left: 25px;
+    margin-left: 0px;
     padding-right: 15px;
     position: relative;
     z-index: 1;
@@ -378,7 +378,7 @@ body {
     background-color: #ffffff;
     border: 3px solid #fccddd;
     box-shadow: 5px 3px #8b8181dc;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
     width: 400px;
     border-radius: 8px;
     text-align: center;
