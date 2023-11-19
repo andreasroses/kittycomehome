@@ -281,15 +281,15 @@ body {
 
 .card-container-carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out; 
+    transition: transform 0.5s ease-in-out;
+    margin-left: 25px;
+    padding-right: 15px;
     position: relative;
     z-index: 1;
 }
 
 .card-carousel {
-    flex: 0 0 calc(100% / 4); /* Display 4 cards at a time */
-    max-width: calc(100% / 4);
-    box-sizing: border-box;
+ 
     position: relative;
 }
 
