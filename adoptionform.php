@@ -17,7 +17,7 @@
     </div>
     <div class="adoption-form-container">
     <h2>Cat Adoption Fostering Form</h2>
-    <form action="process_form.php" method="post">
+    <form action="php-scripts/process_adoption_form.php" method="post">
         <h3>Applicant Information:</h3>
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" required>

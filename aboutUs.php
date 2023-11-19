@@ -21,7 +21,7 @@
     </div>
     <div>
         <hr style="margin: 2em">
-        <div class="flex">
+        <div style="display: flex;">
             <div style="width:50%; margin-left: 2em; margin-right:1em;">
                 <!-- left subheader -->
                 <h3 class="text-block text-align-center">About Us</h3> 
