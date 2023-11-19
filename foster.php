@@ -16,7 +16,6 @@
     <div class="header_img">
         <img src="./images/cat-paws-banner" alt="A picture of cute cat paws behind pink background.">
     </div>
-    <div><button><a href="./images/fostering-form.pdf" class ="home-sub-header">Download fostering Form</a></button></div>
     <!-- Search form -->
     <div class="search-container">
             <form method="GET" action="">
