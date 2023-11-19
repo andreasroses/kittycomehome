@@ -282,6 +282,7 @@ body {
 .card-container-carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    flex: 0 0 25%;
     margin-left: 40px;
     margin-right: 40px;
     position: relative;
@@ -289,7 +290,7 @@ body {
 }
 
 .card-carousel {
-    flex: 0 0 25%;
+    flex: 0 0 auto;
     box-sizing: border-box;
     position: relative;
 }
