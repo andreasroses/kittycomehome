@@ -289,7 +289,7 @@ body {
 }
 
 .card-carousel {
-    flex: 0 0 auto;
+    flex: 0 0 25%;
     box-sizing: border-box;
     position: relative;
 }
