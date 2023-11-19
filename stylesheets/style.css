@@ -413,7 +413,10 @@ body {
 .search-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 620px;
+    margin-left: 10px;
+    position: absolute;
+    z-index: 5;
 }
 
 .search-container form {
