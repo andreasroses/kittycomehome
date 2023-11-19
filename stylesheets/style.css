@@ -289,7 +289,8 @@ body {
 }
 
 .card-carousel {
-    flex: 0 0 calc(100% / 4); /* Display 4 cards at a time */
+    flex: 0 0 auto;
+    box-sizing: border-box;
     position: relative;
 }
 
