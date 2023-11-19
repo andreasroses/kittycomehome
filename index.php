@@ -15,7 +15,7 @@
     <div class="header_img">
         <img src="./images/cat-banner.jpeg" alt="A picture of a cute cat behind pink background.">
     </div>
-    <div><button><a href="foster.php" class ="home-sub-header">Available For Fostering</a></button></div>
+    <div><button><a href="foster.php" class ="home-sub-header">Available For Fostering/Adopting</a></button></div>
     <!--Kitty carousel gallery-->
     <div class="gallery-container-carousel">
         <!--prev button-->
