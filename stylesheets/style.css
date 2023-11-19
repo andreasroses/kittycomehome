@@ -290,6 +290,7 @@ body {
 
 .card-carousel {
     flex: 0 0 auto;
+    max-width: calc(100% / 4);
     box-sizing: border-box;
     position: relative;
 }
