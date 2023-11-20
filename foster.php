@@ -72,14 +72,18 @@
         $result = $db_conn->query($query);
 
         // Loop through cat names
+        //when user clicks on a cat it should lead to their cat profile
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 ?>
         <div class="card">
-            <div class="kitty-card">
-                <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                <p><?php echo $row['cat_name']; ?></p>
-            </div>
+        <div class="card">
+            <a href="cat_profile.php?cat_name=<?php echo urlencode($row['cat_name']); ?>">
+                <div class="kitty-card">
+                    <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                    <p><?php echo $row['cat_name']; ?></p>
+                </div>
+            </a>
         </div>
         <?php
         }
