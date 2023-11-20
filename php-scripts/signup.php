@@ -1,44 +1,50 @@
 <?php
 session_start();
+
+function getFilename($uploadDir, $ogName) {
+    $num = 0;
+    $newFilename = $ogName;
+    while (file_exists($uploadDir . $newFilename)) {
+        $num++;
+        $newFilename = pathinfo($ogName, PATHINFO_FILENAME) . "_" . $num . "." . pathinfo($ogName, PATHINFO_EXTENSION);
+    }
+
+    return $newFilename;
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $uploadDir = "pfp/";
+    $uploadDir = __DIR__ . "/../images/";
     $profPic = $_FILES['profPic'];
-    if ($profilePicture['error'] === UPLOAD_ERR_OK) {
-        $fileName = uniqid() . "_" . basename($profilePic['name']);
+    
+    if ($profPic['error'] === UPLOAD_ERR_OK) {
+        $fileName = getFilename($uploadDir, basename($profPic['name']));
         $uploadPath = $uploadDir . $fileName;
-        if (move_uploaded_file($profilePicture['tmp_name'], $uploadPath)) {
+
+        if (move_uploaded_file($profPic['tmp_name'], $uploadPath)) {
             require_once("config.php");
             $fname = $_POST["fname"];
             $lname = $_POST["lname"];
             $email = $_POST["email"];
             $pwd = $_POST["pwd"];
-            // Insert user data into the database
-            $sql = "INSERT INTO accounts (fname,lname,email, password,img_src) VALUES ('$fname','$lname','$email', '$pwd','$fileName')";
+            $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$fileName')";
+            
             if ($db_conn->query($sql) === TRUE) {
                 echo "User registered successfully!";
-                // Fetch the user ID from the database
                 $user_id = $db_conn->insert_id;
-        
-                // Set the user ID in the session
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['fname'] = $fname;
                 $_SESSION['lname'] = $lname;
-                $_SESSION['pfpimg'] = $fileName;
-                // Redirect to a welcome page or any other desired page
-                header("Location: useraccount.php");
+                $_SESSION['pfpimg'] = $uploadPath;
+                header("Location: ../useraccount.php");
                 exit();
-            }
-            else {
+            } else {
                 echo "Error: " . $sql . "<br>" . $db_conn->error;
             }
-        }
-        else {
+        } else {
             echo "Error moving uploaded file.";
         }
-    }
-    else {
+    } else {
         echo "Error uploading profile picture.";
     }
 }
-
 ?>

@@ -5,10 +5,10 @@ session_start();
 
 if (isset($_SESSION['user_id'])) {
     // User is logged in
-    $navbarLink = '<a href="useraccount.php">My Account</a>';
+    $navbarLink = '<a href="useraccount.php" class="nav-link-end">My Account</a>';
 } else {
     // User is not logged in
-    $navbarLink = '<a href="login.php" class="nav-link-end">Sign-up/Login</a>';
+    $navbarLink = '<a href="login-pg.php" class="nav-link-end">Sign-up/Login</a>';
 }
 ?>
 

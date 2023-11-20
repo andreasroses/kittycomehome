@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="stylesheets/style.css">
-
+    <link rel="stylesheet" href="stylesheets/formStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <div class="flex maincontainer">
         <!-- <img id = "headerImg" src="https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg" alt="cute cat landscape image"> -->
         <div class="formBox">
-            <form action="login.php" method="POST" id="login-form">
+            <form action="/php-scripts/login.php" method="POST" id="login-form">
                 <table class="loginForm">
                     <tr>
                         <td>
@@ -34,23 +35,27 @@
                         ?>
                     <tr>
                         <td>
-                            <label for="email">Email:</label><br>
-                            <input type="text" id="email" name="email"><br>
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email">
                         </td>
                     </tr>
-                    <tr class="fixPadding">
+                    <tr>
                         <td>
-                            <label for="pwd">Password:</label><br>
+                            <label for="pwd">Password:</label>
                             <input type="text" id="pwd" name="pwd">
-                            <h4>Forgot password?</h4>
+                            <h4>Forgot password?</h4><br>
                             <div class="submit-button-container">
                                 <input type="submit" value="Login">
                             </div>
                         </td>
                     </tr>
-                    <h3>New to KittyComeHome?</h4>
+                    <tr class="fixPadding">
+                        <td>
+                        <h3>New to KittyComeHome?</h3>
                         <div class="submit-button-container">
-                            <button class="formButton">Sign Up</button>
+                            <a href="signup-pg.php" class="formButton">
+                                Sign Up
+                            </a>
                         </div>
                         </td>
                         </tr>
@@ -58,29 +63,6 @@
             </form>
         </div>
     </div>
-
-    <!-- <div class = "formBox">
-        <form action="" method="get" id="login-form">
-            <table class = "loginForm">
-                <tr>
-                    <td>
-                        <label for="email">Email:</label><br>
-                        <input type="text" id="email" name="email"><br>
-                    </td>
-                    <td>
-                        <label for="pwd">Password:</label><br>
-                        <input type="text" id="pwd" name="pwd"><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="Submit">
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div> -->
-
 </body>
 
 </html>

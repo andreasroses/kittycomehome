@@ -129,59 +129,6 @@ html, body {
     text-align: center;
 }
 
-.formBox{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left:auto; 
-    margin-right:auto;
-    text-align: center;
-}
-
-table.loginForm {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background:#edadbb;
-    color:black;
-    border: 5px solid white;
-    border-radius: 10px;
-    font-family: fantasy,sans-serif;
-    font-size:12px;
-    height: 400px;
-    width:350px; 
-    margin-left:auto; 
-    margin-right:auto;
-}
-
-table.loginForm input[type="submit"] {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 5px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-family: fantasy, sans-serif;
-}
-
-tr.fixPadding>td {
-    padding-bottom: 0em;
-    height: 2px;
-    
-}
-
-.loginForm td{
-    vertical-align: baseline;
-    padding: 10px;
-}
-
-.loginForm label{
-    text-align: left;
-    display:block;
-}
-
 .defaultWidth {
     width: 250px; 
     box-sizing: border-box;
@@ -192,7 +139,30 @@ tr.fixPadding>td {
     box-sizing: border-box; 
 }
 
+.userAcc-container{
+    display: flex;
+    flex-direction: column;
+    background:#edadbb;
+    height: 460px;
+    width:360px; 
+}
 
+.userAcc-container img{
+    width: 350px;
+    height: 220px;
+    border-radius: 5px;
+    align-self: left;
+}
+
+.formButton{
+    background-color: #ffffff;
+    color: #3d3737;
+    border-radius: 5px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-family: "Playpen Sans",sans-serif;
+    text-decoration: none;
+}
 .maincontainer{
 
     width: auto;
@@ -208,20 +178,6 @@ tr.fixPadding>td {
     justify-content: center; /* Center horizontally within the container */
 }
 
-h2,h3,h4,h5,h6{
-    font-family: fantasy, sans-serif;
-    text-align: center;
-}
-
-.formButton{
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 5px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-family: fantasy, sans-serif;
-}
 
 .gallery-container {
     max-width: 1400px; /* Set the maximum width of the container */
