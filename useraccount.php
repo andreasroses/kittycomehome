@@ -21,7 +21,7 @@
             <h1>My Account</h1>
             <div>
                 <?php
-
+                session_start();
                 // Check if the session variable is set
                 if (isset($_SESSION['pfpimg'])) {
                     // Get the image path from the session variable
