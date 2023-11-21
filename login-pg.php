@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="min-height: 100vh;">
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
@@ -63,6 +63,7 @@
             </form>
         </div>
     </div>
+    <footer class="footerabs"></footer>
 </body>
 
 </html>

@@ -11,7 +11,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-<body>
+<body style="min-height: 100vh;">
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
@@ -49,6 +49,6 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-
+    <footer class="footerabs"></footer>
 </body>
 </html>

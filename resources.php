@@ -44,6 +44,6 @@
             <a href="https://vcahospitals.com/">VCA Hostpitals</a>
         </div>
     </div>
-
+    <footer></footer>
 </body>
 </html>

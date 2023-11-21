@@ -57,6 +57,7 @@
             ?>
         </div>   
     </div>
+    <footer></footer>
     <!--javascript for carousel-->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -89,6 +90,6 @@
             showCard(currentIndex);
         });
     </script>
-    
+    <footer class="footerabs"></footer>
 </body>
 </html>
