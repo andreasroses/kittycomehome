@@ -30,6 +30,9 @@
                     // Display the image using an <img> tag
                     echo '<img src="' . $imagePath . '" alt="Profile Picture">';
                 }
+                ini_set('display_errors', 1);
+                ini_set('display_startup_errors', 1);
+                error_reporting(E_ALL);
                 ?>
             </div>
             <div>
@@ -53,4 +56,5 @@
         </div>
     </div>
 </body>
+
 </html>

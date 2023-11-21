@@ -10,6 +10,9 @@ if (isset($_SESSION['user_id'])) {
     // User is not logged in
     $navbarLink = '<a href="login-pg.php" class="nav-link-end">Sign-up/Login</a>';
 }
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 
 <!--navigation bar-->
