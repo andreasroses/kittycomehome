@@ -31,12 +31,12 @@
                 compassionate individuals who share a common love for cats, creating a space where fostering and adoption
                 become not just actions, but heartfelt connections.
 
-                Who We Are:
+                <strong>Who We Are:</strong>
                 Kitty Come Home isn't just a website; it's a vibrant community dedicated to the well-being of our feline friends.
                 Whether you're a seasoned cat enthusiast, a first-time pet parent, or someone looking to make a positive impact in
-                a cat's life, you've found your online home.
+                a cat's life, you've found your online home.<br/>
 
-                What We Do:
+                <strong>What We Do:</strong>
                 Our platform serves as a bridge between loving foster homes and cats in need of a temporary haven or a forever family.
                 We connect foster parents with individuals eager to provide a loving home, fostering an environment of care, compassion, and responsible pet ownership.
             </p>
@@ -47,20 +47,20 @@
             <h3 class="text-block text-align-center">Why Choose Kitty Come Home:</h3>
             <!-- right text -->
             <ul class="text-block">
-                <li>Community: Join a community of cat lovers who share your passion for feline companionship. Connect,
+                <li><strong>Community:</strong> Join a community of cat lovers who share your passion for feline companionship. Connect,
                     share stories, and find support from like-minded individuals who understand the joy and responsibility that comes with being a cat parent.
-                </li>
-                <li>Fostering Opportunities: Make a difference in a cat's life by becoming a foster parent. Whether you're providing temporary care or considering
+                </li><br/>
+                <li><strong>Fostering Opportunities:</strong> Make a difference in a cat's life by becoming a foster parent. Whether you're providing temporary care or considering
                     adoption, your contribution matters, and we're here to guide you every step of the way.
-                </li>
-                <li>Adoption Made Easy: Finding your purr-fect match has never been easier. Browse through our database of adorable cats searching for their
+                </li><br/>
+                <li><strong>Adoption Made Easy:</strong> Finding your purr-fect match has never been easier. Browse through our database of adorable cats searching for their
                     forever homes. Our adoption process is designed to ensure the well-being of both the cats and their new families.
                 </li>
             </ul>
 
         </div>
     </div>
-
+    <hr/>
     <!-- "Join Us in Making a Difference" centered under both sections -->
     <div style="text-align: center;">
         <h3 class="text-block">Join Us in Making a Difference:</h3>
@@ -69,6 +69,6 @@
 <div style="text-align: center;">
     <p class="text-block">Thank you for being a part of the Kitty Come Home family!</p>
 </div>
-
+<footer></footer>
 </body>
 </html>

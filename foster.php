@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>foster</title>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -15,7 +17,7 @@
     </script>
 </head>
 
-<body style="background-image: url(''); background-repeat: repeat; background-size: 10%;">
+<body style="overflow-x: hidden">
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
@@ -76,7 +78,7 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 ?>
-        <div class="card">
+        
         <div class="card">
             <a href="cat_profile.php?cat_name=<?php echo urlencode($row['cat_name']); ?>">
                 <div class="kitty-card">
@@ -95,6 +97,7 @@
         $db_conn->close();
         ?>
     </div>
+    <footer></footer>
 </body>
 
 </html>

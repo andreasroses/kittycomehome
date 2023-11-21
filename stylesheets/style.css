@@ -2,6 +2,13 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+footer{
+    background-color: #edadbb;
+    width: 100%;
+    height: 5em;
+    margin-top: 3em;
+}
 .container {
     max-width: 1200px; /* Set the maximum width of the container */
     margin: 0 auto; /* Center the container horizontally */
@@ -180,14 +187,11 @@ html, body {
 
 
 .gallery-container {
-    max-width: 1400px; /* Set the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 0;
+    width: 100%; /* Set the maximum width of the container */
+    margin-left: 5em;
+    margin-right: 5em;
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px;
     padding-top: 690px;
 
 }
@@ -207,10 +211,16 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
     margin: 20px;
 }
 
+.card a{
+    text-decoration: none;
+}
+.card p{
+    font-family: "Playpen Sans", serif;
+    font-weight: bold;
+}
 .card .kitty-card:hover {
     box-shadow: 5px 10px #ffaac6dc;
     filter: saturate(150%);
@@ -299,7 +309,8 @@ body {
     box-shadow: 5px 3px #8b8181dc;
     border-radius: 8px;
     color:#ffaac6dc;
-    font-family: fantasy;
+    font-family: "Playpen Sans", serif;
+    font-weight: bold;
     font-size: x-large;
     display: flex;
     justify-content: center;
@@ -327,9 +338,9 @@ body {
 }
 
 .home-sub-header {
-    color:#ffaac6;
+    color:#ffffff;
     position: absolute;
-    background-color: #ffffff;
+    background-color:#ffaac6;
     border: 3px solid #fccddd;
     box-shadow: 5px 3px #8b8181dc;
     padding: 10px 10px 10px 10px;
@@ -339,7 +350,7 @@ body {
     margin-top: 525px;
     margin-left: 525px;
     font-size: x-large;
-    font-family: fantasy;
+    font-family: "Playpen Sans", serif;
     cursor: pointer;
     z-index: 4;
     text-decoration: none;
@@ -347,23 +358,32 @@ body {
 
 .home-sub-header:hover {
     box-shadow: 5px 10px #ffaac6dc;
+    color: rgb(238, 238, 238);
     filter: saturate(150%);
 }
 
 .adoption-form-container {
-    text-align: left;
     max-width: 500px;
     margin: auto;
     line-height: 2em;
     color: #3d3737;
     font-family: "Playpen Sans", serif;
+    background-color:#ffdee9;
+    padding: 3em;
+    padding-top: 2em;
+    border-radius: 1.5em;
+    margin-top: 3em;
 }
-
-.adoption-form h1,h2,h3,h4,h5 {
+.adoption-form-container h2{
+    text-align: center;
+}
+.adoption-form h3,h4,h5 {
     text-align: left;
     color: #3d3737;
     font-family: "Playpen Sans", serif;
 }
+
+
 
 .search-container {
     color:#ffaac6;
@@ -378,7 +398,6 @@ body {
     margin-top: 550px;
     margin-left: 400px;
     font-size: x-large;
-    font-family: fantasy;
     cursor: pointer;
     z-index: 4;
 }
@@ -402,7 +421,7 @@ body {
     border: 5px solid #ffdee9;
     box-shadow: 5px 10px #fccddd;
     color:#ffaac6dc;
-    font-family: fantasy;
+    font-family: "Playpen Sans", serif;
 }
 
 .search-container input {
@@ -423,17 +442,18 @@ body {
     border: none;
     cursor: pointer;
     display: inline-block;
-    font-family: fantasy;
+    font-family: "Playpen Sans", serif;
     border-radius: 8px;
     font-size: large;
 }
 
 .resource-display {
     margin-top: 20px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px;
     display: inline-flex;
     border: 5px solid #facbdb;
     box-shadow: 5px 10px #ffaac6dc;
+    border-radius: 0.5em;
     color:#ffaac6dc;
     background-color: #fdd8e5; 
 }
@@ -448,26 +468,30 @@ body {
 .resource-container img {
     height: 30%;
     width: 30%;
+    border:solid 2px #ffaac6;
+    border-radius: 0.5em;
 }
 .resource-container p {
-    color:#0f0f0fdc;
-    font-family:'Times New Roman', Times, serif;
+    color:#3d3737;
+    font-family:'Playpen Sans', serif;
     font-weight: bold;
-    font-size: x-large;
+    font-size: large;
     margin-left: 50px;
 }
 .resource-container a {
     text-decoration: none;
     font-size: xx-large;
     color:#f38aaddc;
-    font-family: fantasy;
+    font-family:'Playpen Sans', serif;
+    font-weight: bold;
     box-shadow: 5px 3px #8b8181dc;
     border: 3px solid #ffb6ce;
     padding: 10px 10px 10px 10px;
     position: absolute;
     margin-top: 120px;
     margin-left: 800px;
-
+    border-radius: 0.25em;
+    float: right;
 }
 
 .resource-container a:hover {

@@ -20,15 +20,18 @@
     <style>
         /* Add your custom styles here */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
+            font-family: "Playpen Sans", serif;
+            /* margin: 20px;
+            padding: 20px; */
             background-color: #FFFFFF;
+            color: #3d3737;
         }
 
         .faq-container {
             max-width: 800px;
             margin: auto;
+            margin-top: 3em;
+            min-height: 70vh;
         }
 
         .faq-question {
@@ -41,9 +44,11 @@
             width: 100%;
             font-size: 18px;
             transition: background-color 0.3s;
+            font-family: "Playpen Sans", serif;
         }
 
         .faq-answer {
+            font-family: "Playpen Sans", serif;
             display: none;
             padding: 10px;
             background-color: #FFFFFF;
@@ -77,7 +82,7 @@
     <!-- Add more FAQ items as needed -->
 
 </div>
-
+<footer></footer>
 <script>
     const faqQuestions = document.querySelectorAll('.faq-question');
 

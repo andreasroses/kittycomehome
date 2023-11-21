@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 <body>
-<div class="flex">
+    <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
     <div class="adoption-form-container">
@@ -75,6 +75,5 @@
         <input type="submit" value="Submit">
     </form>
     </div>
-
 </body>
 </html>
