@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
+    z-index:0;
 }
 
 footer{
@@ -205,9 +206,42 @@ footer{
     padding-top: 690px;
 
 }
-/* body {
-    position: relative;
-} */
+
+.cat-profile-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cat-profile-inner{
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Playpen Sans", serif;
+    color:#3d3737;
+    background-color: #fdd8e5;
+    border-radius: 1.5em;
+    padding: 2em;
+    width: 50%;
+    border: 0.5em double #ff88b0;
+}
+
+.cat-pfp{
+    width: 70%;
+    object-fit: contain;
+    border-radius: 0.5em;
+    border: 0.5em solid #ff88b0;
+
+}
+
+.cat-name{
+    color:#ff71a1;
+}
+.cat-info{
+    line-height: 1em;
+    margin: 0.5em;
+}
 .kitty-card {
     background-color: #fffefe;
     border: 3px solid #fccddd;
@@ -328,6 +362,7 @@ footer{
     align-items: center;
     z-index: 3;
     position: relative;
+    text-decoration: none;
 }
 
 .card-carousel:hover .kitty-card-carousel:hover {
@@ -345,6 +380,7 @@ footer{
     height: 1000px;
     width: 100%;
     position: absolute;
+    z-index: -1;
 }
 
 .home-sub-header {
@@ -466,6 +502,7 @@ footer{
     font-family: "Playpen Sans", serif;
     border-radius: 8px;
     font-size: large;
+    text-decoration: none;
     float: right;
 }
 .resource-display {

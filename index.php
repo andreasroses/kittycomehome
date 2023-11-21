@@ -33,7 +33,7 @@
         // Include the database configuration
         include 'php-scripts/config.php';
         // Default query to fetch all cat information
-        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+        $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
         $result = $db_conn->query($query);
         // Loop through cat names
         if ($result->num_rows > 0) {
@@ -41,10 +41,10 @@
                 ?>
         <div class="card-container-carousel">
             <div class="card-carousel">
-                <div class="kitty-card-carousel">
+                <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>" class="kitty-card-carousel">
                     <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
                     <p><?php echo $row['cat_name']; ?></p>
-                </div>
+                </a>
             </div>
             <?php
             }
@@ -57,7 +57,6 @@
             ?>
         </div>   
     </div>
-    <footer></footer>
     <!--javascript for carousel-->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -90,6 +89,6 @@
             showCard(currentIndex);
         });
     </script>
-    <footer class="footerabs"></footer>
+    <footer></footer>
 </body>
 </html>

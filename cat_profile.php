@@ -22,20 +22,39 @@
     include 'php-scripts/config.php';
 
     // Get the cat name from the URL parameter
-    $cat_name = isset($_GET['cat_name']) ? mysqli_real_escape_string($db_conn, $_GET['cat_name']) : '';
+    $cat_id = isset($_GET['cat_id']) ? mysqli_real_escape_string($db_conn, $_GET['cat_id']) : '';
 
     // Fetch cat information based on the cat name
-    $query = "SELECT * FROM fostercat WHERE cat_name = '$cat_name'";
+    $query = "SELECT * FROM fostercat WHERE cat_id = '$cat_id'";
     $result = $db_conn->query($query);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        $isgoodwithcats = "No";
+        $isgoodwithdogs = "No";
+        $isgoodwithkids = "No";
+        if($row['cat_isgoodwithcats'] == 1){
+            $isgoodwithcats = "Yes";
+        }
+        if($row['cat_isgoodwithdogs'] == 1){
+            $isgoodwithdogs = "Yes";
+        }
+        if($row['cat_isgoodwithkids'] == 1){
+            $isgoodwithkids = "Yes";
+        }
         ?>
         <div class="cat-profile-container">
-            <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-            <h2><?php echo $row['cat_name']; ?></h2>
-            <p><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
-            <p><strong>Age:</strong> <?php echo $row['cat_age']; ?></p>
+            <div class="cat-profile-inner">
+                <img class="cat-pfp" src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                <h2 class="cat-name"><?php echo $row['cat_name']; ?></h2>
+                <div style="margin-bottom: 1em;">
+                    <p class="cat-info"><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
+                    <p class="cat-info"><strong>Good with cats?</strong> <?php echo $isgoodwithcats ?></p>
+                    <p class="cat-info"><strong>Good with dogs?</strong> <?php echo $isgoodwithdogs ?></p>
+                    <p class="cat-info"><strong>Good with kids?</strong> <?php echo $isgoodwithkids ?></p>
+                </div>
+                <a class="list-form-btn" href="./adoptionform.php">Fill out Adoption Form</a>
+            </div>
         </div>
         <?php
     } else {
@@ -46,6 +65,7 @@
     // Close the database connection
     $db_conn->close();
     ?>
+    <footer></footer>
 </body>
 
 </html>

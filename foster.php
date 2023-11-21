@@ -69,7 +69,7 @@
         }
     } else {
         // Default query to fetch all cat information
-        $query = "SELECT cat_name, cat_img_src FROM fostercat";
+        $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
     }
         $result = $db_conn->query($query);
 
@@ -80,7 +80,7 @@
                 ?>
         
         <div class="card">
-            <a href="cat_profile.php?cat_name=<?php echo urlencode($row['cat_name']); ?>">
+            <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>">
                 <div class="kitty-card">
                     <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
                     <p><?php echo $row['cat_name']; ?></p>
