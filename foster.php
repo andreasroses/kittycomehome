@@ -53,18 +53,18 @@
             case 'cat_isgoodwithcats':
             case 'cat_isgoodwithdogs':
             case 'cat_isgoodwithkids':
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
+                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
                 break;
             case 'cat_Male':
                 $searchBy = 'Male';
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Male'";
+                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Male'";
                 break;
             case 'cat_Female':
                 $searchBy = 'Female';
-                $query = "SELECT cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Female'";
+                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Female'";
                 break;
             default:
-                $query = "SELECT cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
+                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
                 break;
         }
     } else {
