@@ -2,8 +2,11 @@
 .loginForm h2,h3,h4,h5,h6{
     text-align: center;
     color: #3d3737;
+    margin: 0;
 }
-
+.loginForm h4, .loginForm a{
+    color:#534a4a;
+}
 .signupForm h2,h3,h4,h5,h6{
     text-align: center;
     color: #3d3737;
@@ -24,14 +27,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left:auto; 
-    margin-right:auto;
+    margin: auto;
     text-align: center;
 }
 
 table.signupForm {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     background:#edadbb;
@@ -39,10 +41,10 @@ table.signupForm {
     border: 5px solid white;
     border-radius: 10px;
     font-size:12px;
-    height: 460px;
+    height: fit-content;
+    padding: 2em;
+    padding-top: 1em;
     width:360px; 
-    margin-left:auto; 
-    margin-right:auto;
     font-family: "Playpen Sans",sans-serif;
 }
 
@@ -67,7 +69,6 @@ table.signupForm input[type="submit"] {
 
 table.loginForm {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background:#edadbb;
@@ -75,10 +76,9 @@ table.loginForm {
     border: 5px solid white;
     border-radius: 10px;
     font-size:12px;
-    height: 420px;
+    min-height: fit-content;
+    padding: 2em;
     width:350px; 
-    margin-left:auto; 
-    margin-right:auto;
     font-family: "Playpen Sans",sans-serif;
 }
 
@@ -100,7 +100,7 @@ tr.fixPadding>td {
 
 .loginForm td{
     vertical-align: baseline;
-    padding: 10px;
+    padding: 0.5em;
 }
 
 .signupForm td{

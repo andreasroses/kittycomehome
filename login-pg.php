@@ -23,7 +23,7 @@
                 <table class="loginForm">
                     <tr>
                         <td>
-                            <h2>Login</h2>
+                            <h1>Login</h1>
                         </td>
                     </tr>
                     <?php
@@ -36,27 +36,22 @@
                     <tr>
                         <td>
                             <label for="email">Email:</label>
-                            <input type="text" id="email" name="email">
+                            <input class="form-control" type="text" id="email" name="email">
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="pwd">Password:</label>
-                            <input type="text" id="pwd" name="pwd">
+                            <input class="form-control" type="text" id="pwd" name="pwd">
                             <h4>Forgot password?</h4><br>
                             <div class="submit-button-container">
-                                <input type="submit" value="Login">
+                                <input class="list-form-btn" type="submit" value="Login">
                             </div>
                         </td>
                     </tr>
                     <tr class="fixPadding">
                         <td>
-                        <h3>New to KittyComeHome?</h3>
-                        <div class="submit-button-container">
-                            <a href="signup-pg.php" class="formButton">
-                                Sign Up
-                            </a>
-                        </div>
+                        <p>New to KittyComeHome? <a href="signup-pg.php">Sign Up</a></p>
                         </td>
                         </tr>
                 </table>

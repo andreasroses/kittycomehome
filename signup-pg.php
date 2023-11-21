@@ -20,47 +20,45 @@
                 <table class = "signupForm">
                     <tr>
                         <td colspan="2">
-                            <h2>Sign Up</h2>
+                            <h1>Sign Up</h1>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="fname">First Name</label>
-                            <input class="special-width" type="text" id="fname" name="fname">
+                            <input class="form-control" type="text" id="fname" name="fname">
                         </td>
                         <td>
                             <label for="lname">Last Name</label>
-                            <input class="special-width" type="text" id="lname" name="lname">
+                            <input class="form-control" type="text" id="lname" name="lname">
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <label for="email">Email:</label>
-                            <input class="defaultWidth" type="text" id="email" name="email">
+                            <input class="form-control" style="width:95%" type="text" id="email" name="email">
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td>
                         <label for="pwd">Password:</label>
-                        <input class="defaultWidth" type="text" id="pwd" name="pwd">
+                        <input class="form-control" type="password" id="pwd" name="pwd">
                     </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
+                    <td>
                         <label for="pwd">Confirm Password:</label>
-                        <input class="defaultWidth" type="text" id="cpwd" name="cpwd">
+                        <input class="form-control" type="password" id="cpwd" name="cpwd">
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <label for="profPic">Profile Picture:</label>
-                        <input type="file" name="profPic">
+                        <input class="form-control" style="width:95%;" type="file" name="profPic">
                     </td>
                 </tr>
                 <tr class="fixPadding">
                     <td colspan="2">
                         <div class="submit-button-container">
-                            <input type="submit" value="Sign Up">
+                            <input class="list-form-btn" type="submit" value="Sign Up">
                         </div>
                     </td>
                 </tr>

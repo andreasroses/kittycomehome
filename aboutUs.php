@@ -16,8 +16,8 @@
     </div>
     
 <!-- header image -->
-<div class="justify-content-center">
-    <img src="images/filler.jpg" id="about-img">
+<div>
+    <img src="images/cute-abyssinian-kittens-website-header.jpg" id="about-img">
 </div>
 <div>
     <hr style="margin: 2em">

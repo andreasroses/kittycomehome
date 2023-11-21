@@ -20,11 +20,10 @@
         <form action="php-scripts/process_listing_form.php" method="post">
             <!-- cat_name -->
             <label for="catName">Cat Name:</label>
-            <input type="text" name="catName" required>
-            <br>
+            <input class="form-control" type="text" name="catName" required>
             <!-- cat_gender -->
             <label for="catGender">Gender:</label>
-            <select name="catGender" required>
+            <select class="form-control" name="catGender" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
@@ -43,10 +42,10 @@
             <br>
             <!-- cat_img_src -->
             <label for="catImg">Upload Image:</label>
-            <input type="file" name="catImg" accept="image/*" required>
+            <input class="form-control" type="file" name="catImg" accept="image/*" required>
             <br>
             <!-- Submit button -->
-            <input type="submit" value="Submit">
+            <input class="list-form-btn" type="submit" value="Submit">
         </form>
     </div>
     <footer class="footerabs"></footer>
