@@ -226,15 +226,48 @@ footer{
     width: 50%;
     border: 0.5em double #ff88b0;
 }
-
+.left-column{
+    width: 25%;
+    margin-right: 2em;
+}
+.right-column{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 75%;
+    margin-left: 2em;
+    border-left:#ff71a1 double 0.5em;
+    border-right:#ff71a1 double 0.5em;
+}
+.profile-container{
+    display:flex;
+    justify-content: center;
+    padding: 3em;
+}
 .cat-pfp{
     width: 70%;
     object-fit: contain;
     border-radius: 0.5em;
     border: 0.5em solid #ff88b0;
-
 }
-
+.cat-pfp-container{
+    border-radius: 0.5em;
+    border: 1em solid #fdd8e5;
+}
+.cat-info-container{
+    font-family: "Playpen Sans", fantasy;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.post-card{
+    width: 20em;
+    height: 20em;
+    border-radius: 0.5em;
+    margin: 0.5em;
+}
+.postcard-img{
+    height: 100%;
+}
 .cat-name{
     color:#ff71a1;
 }
@@ -419,6 +452,7 @@ footer{
     padding-top: 2em;
     border-radius: 1.5em;
     margin-top: 3em;
+    border:#ffaac6 double 0.5em;
 }
 .adoption-form-container h2{
     text-align: center;

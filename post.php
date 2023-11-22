@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Profile</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="flex">
+        <?php include 'php-scripts/navbar.php'; ?>
+    </div>
+    <?php
+        include 'php-scripts/config.php';
+
+    // Get the cat name from the URL parameter
+    $post_id = isset($_GET['post_id']) ? mysqli_real_escape_string($db_conn, $_GET['post_id']) : '';
+
+    // Fetch cat information based on the cat name
+    $query = "SELECT * FROM post WHERE post_id = '$post_id'";
+    $result = $db_conn->query($query);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            ?>
+            <img src="<?php echo $row['post_imgsrc']?>">
+            <p><?php echo $row['post_desc']?></p>
+            <?php
+            
+        }
+    }
+    else {
+        // Display a message if there are no cat cards
+        echo "<p>No matching posts available.</p>";
+    }
+    // Close the database connection
+    $db_conn->close();
+    ?>
+    <footer></footer>
+</body>
+
+</html>
