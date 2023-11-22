@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Database configuration
 define('DB_HOST', 'kch-db.mysql.database.azure.com');
 define('DB_USER', 'adminkch');

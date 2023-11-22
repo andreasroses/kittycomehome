@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include the database configuration
 include 'php-scripts/config.php';
 
