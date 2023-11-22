@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 // navbar.php
 
 if (isset($_SESSION['user_id'])) {
