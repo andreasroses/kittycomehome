@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $lname = $_POST["lname"];
             $email = $_POST["email"];
             $pwd = $_POST["pwd"];
-            $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$fileName')";
+            $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$uploadPath')";
             
             if ($db_conn->query($sql) === TRUE) {
                 echo "User registered successfully!";
