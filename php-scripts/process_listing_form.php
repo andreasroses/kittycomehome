@@ -10,7 +10,7 @@ $catIsGoodWithDogs = isset($_POST['catIsGoodWithDogs']) ? 1 : 0;
 $catIsGoodWithKids = isset($_POST['catIsGoodWithKids']) ? 1 : 0;
 
 // Assuming you have a session variable for account_id, replace $_SESSION['account_id'] with your actual session variable
-$account_id = $_SESSION['account_id'];
+$account_id = $_SESSION['user_id'];
 
 // Handle file upload
 $uploadDir = 'uploads/';
