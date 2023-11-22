@@ -48,7 +48,7 @@
 
             </div>
             <div>
-                <a class="list-form-btn" href="./createpost.php?account_id='<?phpecho $_SESSION['user_id']?>'" style="float:none;">Create Post</a>
+                <a class="list-form-btn" href="./createpost.php" style="float:none;">Create Post</a>
                 <form action="/php-scripts/log-out.php" method="POST" style="margin-top:2em;">
                     <button type="submit" class="formButton">Log Out</button>
                 </form>

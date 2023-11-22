@@ -24,7 +24,7 @@
         <select name="cat" id="cat" class="form-control" style="width: 100%;" required>
             <?php
                 include 'php-scripts/config.php';
-                $account_id = isset($_GET['account_id']) ? mysqli_real_escape_string($db_conn, $_GET['account_id']) : '';
+                $account_id = $_SESSION['user_id'];
                 $query = "SELECT cat_id, cat_name FROM fostercat WHERE account_id = '$account_id'";
                 $result = $db_conn->query($query);
                 
