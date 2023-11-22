@@ -17,11 +17,26 @@
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
+    <div class="post-page">
     <?php
         include 'php-scripts/config.php';
-
     // Get the cat name from the URL parameter
     $post_id = isset($_GET['post_id']) ? mysqli_real_escape_string($db_conn, $_GET['post_id']) : '';
+    $query = "SELECT * FROM post WHERE post_id = '$post_id'";
+    $result = $db_conn->query($query);
+    if($result->num_rows > 0){
+        while ($row = $result->fetch_assoc()) {
+            $accountid = $row['account_id'];
+        }
+    }
+
+    $query = "SELECT account_fname FROM accounts WHERE account_id = '$accountid'";
+    $result = $db_conn->query($query);
+    if($result->num_rows > 0){
+        while ($row = $result->fetch_assoc()) {
+            $accountname = $row['account_fname'];
+        }
+    }
 
     // Fetch cat information based on the cat name
     $query = "SELECT * FROM post WHERE post_id = '$post_id'";
@@ -29,8 +44,10 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             ?>
-            <img src="<?php echo $row['post_imgsrc']?>">
-            <p><?php echo $row['post_desc']?></p>
+            <div class="post-container">
+                <img src="<?php echo $row['post_imgsrc']?>">
+                 <p><a><strong><?php echo $accountname;?>: </strong></a> <?php echo $row['post_desc'];?></p>
+            </div>
             <?php
             
         }
@@ -42,6 +59,7 @@
     // Close the database connection
     $db_conn->close();
     ?>
+    </div>
     <footer></footer>
 </body>
 

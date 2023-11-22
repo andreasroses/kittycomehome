@@ -243,6 +243,26 @@ footer{
     justify-content: center;
     padding: 3em;
 }
+.post-page{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.post-container{
+    background-color:#fdd8e5;
+    padding: 2em;
+    border-radius: 0.5em;
+    color:#3d3737;
+    font-family: "Playpen Sans", fantasy;
+    margin-top: 3em;
+}
+.post-container img{
+    width: 50em;
+    height: 100%;
+    object-fit: contain;
+    border:#3d3737 solid 1px;
+}
+
 .cat-pfp{
     width: 70%;
     object-fit: contain;
