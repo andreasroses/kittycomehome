@@ -21,17 +21,17 @@
     <form class="create-post-container" action="/php-scripts/uploadpost.php" method="POST" enctype="multipart/form-data">
         <h2 style="text-align: center;">Create a New Post</h2>
         <label forHTML="cat">Which of your listed cats is shown in this post?</label>
-        <select name="cat" id="cat" class="form-control" style="width: 100%;">
+        <select name="cat" id="cat" class="form-control" style="width: 100%;" required>
             <?php
                 include 'php-scripts/config.php';
                 $account_id = isset($_GET['account_id']) ? mysqli_real_escape_string($db_conn, $_GET['account_id']) : '';
-                $query = "SELECT cat_name FROM fostercat WHERE account_id = '$account_id'";
+                $query = "SELECT cat_id, cat_name FROM fostercat WHERE account_id = '$account_id'";
                 $result = $db_conn->query($query);
                 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         ?>
-                            <option><?php echo $row['cat_name'];?></option>
+                            <option value="<?php echo $row['cat_id'];?>"><?php echo $row['cat_name'];?></option>
                         <?php
                     }
                 }
@@ -39,9 +39,9 @@
             ?>
         </select>
         <br/>
-        <input class="form-control" type="file" style="width: 95%;">
+        <input class="form-control" type="file" name="postimg" id="postimg" style="width: 95%;" required>
         <br/>
-        <textarea class="form-control" placeholder="Photo Description" style="width: 95%; resize: none;"></textarea>
+        <textarea class="form-control" name="desc" id="desc" placeholder="Photo Description" style="width: 95%; resize: none;"></textarea>
         <button type="submit" class="list-form-btn">Post</button>
             </form>
     </div>
