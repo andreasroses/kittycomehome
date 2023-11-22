@@ -19,28 +19,29 @@
     <h2>Cat Adoption Fostering Form</h2>
     <form action="php-scripts/process_adoption_form.php" method="post">
         <h3>Applicant Information:</h3>
-        <label for="firstName">First Name:</label>
-        <input type="text" name="firstName" required>
-        <br>
-        <label for="lastName">Last Name:</label>
-        <input type="text" name="lastName" required>
-        <br>
+        <div style="display: inline-block; width: 49%;">
+            <label for="firstName">First Name:</label>
+            <input class="form-control" type="text" name="firstName" required>
+        </div>
+        <div style="display: inline-block; width: 49%;">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control" type="text" name="lastName" required>
+        </div>
+        <div style="display: inline-block; width: 49%">
+            <label for="phoneNumber">Phone Number:</label>
+            <input class="form-control" type="tel" name="phoneNumber" required>
+        </div>
+        <div style="display: inline-block; width: 49%;">
+            <label for="email">Email Address:</label>
+            <input class="form-control" type="email" name="email" required>
+        </div>
         <label for="address">Address:</label>
-        <input type="text" name="address" required>
-        <br>
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" name="phoneNumber" required>
-        <br>
-        <label for="email">Email Address:</label>
-        <input type="email" name="email" required>
-        <br>
+        <input class="form-control" style="width:95%" type="text" name="address" required>
         <h3>Living Situation:</h3>
         <label for="residenceType">Type of Residence:</label>
-        <input type="text" name="residenceType" required>
-        <br>
+        <input class="form-control" type="text" name="residenceType" required>
         <label for="ownOrRent">Own or Rent:</label>
-        <input type="text" name="ownOrRent" required>
-        <br>
+        <input class="form-control" type="text" name="ownOrRent" required>
         <label for="landlordPermission">Landlord's Permission (if renting):</label>
         <input type="radio" name="landlordPermission" value="Yes">Yes
         <input type="radio" name="landlordPermission" value="No">No
@@ -49,31 +50,28 @@
         <h3>Pet Ownership History:</h3>
         <label for="currentPets">Current Pets:</label>
         <input type="radio" name="currentPets" value="Yes">Yes
-        <input type="radio" name="currentPets" value="No">No
-        <br>
+        <input  type="radio" name="currentPets" value="No">No
         <label for="numberOfPets">How many:</label>
-        <input type="number" name="numberOfPets" min="0">
-        <br>
+        <input class="form-control" type="number" name="numberOfPets" min="0">
         <label for="species">What species:</label>
-        <input type="text" name="species">
-        <br>
+        <input class="form-control" type="text" name="species">
         <label for="vetPhoneNumber">Veterinary Phone Number:</label>
-        <input type="tel" name="vetPhoneNumber">
-        <br>
+        <input class="form-control" type="tel" name="vetPhoneNumber">
         <label for="knowledgeOfCatCare">Knowledge of Basic Cat Care:</label>
-        <input type="radio" name="knowledgeOfCatCare" value="Yes">Yes
+        <input  type="radio" name="knowledgeOfCatCare" value="Yes">Yes
         <input type="radio" name="knowledgeOfCatCare" value="No">No
         <br>
 
         <h3>Applicant Signature:</h3>
         <label for="applicantSignature">Applicant Signature:</label>
-        <input type="text" name="applicantSignature" required>
+        <input class="form-control" type="text" name="applicantSignature" required>
 
         <label for="date">Date:</label>
-        <input type="date" name="date" required>
+        <input class="form-control"type="date" name="date" required>
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" class="list-form-btn" value="Submit">
     </form>
     </div>
+    <footer></footer>
 </body>
 </html>

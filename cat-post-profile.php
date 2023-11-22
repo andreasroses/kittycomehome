@@ -42,31 +42,51 @@
         if($row['cat_isgoodwithkids'] == 1){
             $isgoodwithkids = "Yes";
         }
-        ?>
-        <div class="cat-profile-container">
-            <div class="cat-profile-inner">
-                <img class="cat-pfp" src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                <h2 class="cat-name"><?php echo $row['cat_name']; ?></h2>
-                <div style="margin-bottom: 1em;">
-                    <p class="cat-info"><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
-                    <p class="cat-info"><strong>Good with cats?</strong> <?php echo $isgoodwithcats ?></p>
-                    <p class="cat-info"><strong>Good with dogs?</strong> <?php echo $isgoodwithdogs ?></p>
-                    <p class="cat-info"><strong>Good with kids?</strong> <?php echo $isgoodwithkids ?></p>
-                </div>
-                <div>
-                    <a class="list-form-btn" href="./cat-post-profile.php?cat_id=<?php echo $cat_id ?>">Go to Profile</a>
-                </div>
-            </div>
-        </div>
-        <?php
     } else {
         // Display a message if the cat profile is not found
         echo "<p>Cat profile not found.</p>";
     }
-
-    // Close the database connection
-    $db_conn->close();
     ?>
+    <div class="profile-container">
+        <div class="left-column">
+            <div class="cat-pfp-container">
+                <img src="<?php echo $row['cat_img_src']?>">
+            </div>
+            <div class="cat-info-container">
+                <div>
+                    <h2 style="text-align: center;"><?php echo $row['cat_name'] ?></h2>
+                    <p><strong>Gender: </strong> <?php echo $row['cat_gender'] ?></p>
+                    <p><strong>Good with cats?: </strong><?php echo $isgoodwithcats ?></p>
+                    <p><strong>Good with dogs?: </strong><?php echo $isgoodwithdogs ?></p>
+                    <p><strong>Good with kids?: </strong><?php echo $isgoodwithkids ?></p>
+                </div>
+                <a href="./adoptionform.php" class="list-form-btn" style="float: none; text-align: center;">Apply to Adopt</a>
+            </div>
+        </div>
+        <div class="right-column">
+        <?php
+        // Fetch cat information based on the cat name
+        $query = "SELECT * FROM post WHERE cat_id = '$cat_id'";
+        $result = $db_conn->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                ?>
+                <a class="post-card" href="./post.php?post_id=<?php echo $row['post_id']?>">
+                    <img class="postcard-img" src="<?php echo $row['post_imgsrc']?>">
+                </a>
+                <?php
+            }
+        } else {
+            // Display a message if the cat profile is not found
+            echo "<p>Cat profile not found.</p>";
+        }
+
+        // Close the database connection
+        $db_conn->close();
+    ?>
+        </div>
+    </div>
     <footer></footer>
 </body>
 
