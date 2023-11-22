@@ -51,6 +51,7 @@
         <div class="left-column">
             <div class="cat-pfp-container">
                 <img src="<?php echo $row['cat_img_src']?>">
+                <img class="heart-icon" src="./images/filled-heart.png">
             </div>
             <div class="cat-info-container">
                 <div>
@@ -61,6 +62,7 @@
                     <p><strong>Good with kids?: </strong><?php echo $isgoodwithkids ?></p>
                 </div>
                 <a href="./adoptionform.php" class="list-form-btn" style="float: none; text-align: center;">Apply to Adopt</a>
+                <a href="" class="list-form-btn" style="float: none; text-align: center; margin-top: 1em;">Owner Profile</a>
             </div>
         </div>
         <div class="right-column">

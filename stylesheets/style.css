@@ -243,6 +243,23 @@ footer{
     justify-content: center;
     padding: 3em;
 }
+.create-post-container{
+    background-color: #ffdee9;
+    border-radius: 1.5em;
+    margin-top: 3em;
+    width: 30em;
+    padding: 2em;
+    color:#3d3737;
+    font-family: "Playpen Sans", fantasy;
+}
+.heart-icon{
+    width: 5em;
+    height: 5em;
+    display: block;
+    position: absolute; top:-0.5em; right:-0.5em;
+    cursor: pointer;
+    filter:brightness();
+}
 .post-page{
     display: flex;
     align-items: center;
@@ -272,6 +289,7 @@ footer{
 .cat-pfp-container{
     border-radius: 0.5em;
     border: 1em solid #fdd8e5;
+    position: relative;
 }
 .cat-info-container{
     font-family: "Playpen Sans", fantasy;
