@@ -19,7 +19,7 @@
     <!--header image-->
     <div class="flex maincontainer">
         <div class = "formBox">
-            <form action="/php-scripts/signup.php" method="POST" enctype="multipart/form-data">
+            <form action="./php-scripts/signup.php" method="POST" enctype="multipart/form-data">
                 <table class = "signupForm">
                     <tr>
                         <td colspan="2">

@@ -1,7 +1,7 @@
 <?php
 
 // Include the database configuration
-include 'php-scripts/config.php';
+include 'config.php';
 
 // Retrieve form data
 $firstName = $_POST['firstName'];
@@ -28,14 +28,14 @@ $query = "INSERT INTO adoptionform
           ('$firstName', '$lastName', '$address', '$phoneNumber', '$email', '$residenceType', '$ownOrRent', '$landlordPermission', 
           '$currentPets', $numberOfPets, '$species', '$vetPhoneNumber', '$knowledgeOfCatCare', '$applicantSignature', '$date')";
 
-$result = $mysqli->query($query);
+$result = $db_conn->query($query);
 
 if (!$result) {
-    die("Error in query: " . $mysqli->error);
+    die("Error in query: " . $db_conn->error);
 } else {
     echo "Adoption form submitted successfully!";
 }
 
 // Close the database connection
-$mysqli->close();
+$db_conn->close();
 ?>

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +21,7 @@
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
     <div style="display: flex; justify-content: center;">
-    <form class="create-post-container" action="/php-scripts/uploadpost.php" method="POST" enctype="multipart/form-data">
+    <form class="create-post-container" action="./php-scripts/uploadpost.php" method="POST" enctype="multipart/form-data">
         <h2 style="text-align: center;">Create a New Post</h2>
         <label forHTML="cat">Which of your listed cats is shown in this post?</label>
         <select name="cat" id="cat" class="form-control" style="width: 100%;" required>

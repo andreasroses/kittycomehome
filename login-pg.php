@@ -22,7 +22,7 @@
     <div class="flex maincontainer">
         <!-- <img id = "headerImg" src="https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg" alt="cute cat landscape image"> -->
         <div class="formBox">
-            <form action="/php-scripts/login.php" method="POST" id="login-form">
+            <form action="./php-scripts/login.php" method="POST" id="login-form">
                 <table class="loginForm">
                     <tr>
                         <td>

@@ -49,7 +49,7 @@
             </div>
             <div>
                 <a class="list-form-btn" href="./createpost.php" style="float:none;">Create Post</a>
-                <form action="/php-scripts/log-out.php" method="POST" style="margin-top:2em;">
+                <form action="./php-scripts/log-out.php" method="POST" style="margin-top:2em;">
                     <button type="submit" class="formButton">Log Out</button>
                 </form>
             </div>

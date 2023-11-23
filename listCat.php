@@ -20,7 +20,7 @@
     </div>
     <div class="adoption-form-container">
         <h2>Foster Cat Information Form</h2>
-        <form action="php-scripts/process_listing_form.php" method="post">
+        <form action="./php-scripts/process_listing_form.php" method="post" enctype="multipart/form-data">
             <!-- cat_name -->
             <label for="catName">Cat Name:</label>
             <input class="form-control" type="text" name="catName" required>
@@ -44,8 +44,8 @@
             <input type="checkbox" name="catIsGoodWithKids">
             <br>
             <!-- cat_img_src -->
-            <label for="catImg">Upload Image:</label>
-            <input class="form-control" type="file" name="catImg" accept="image/*" required>
+            <label forHTML="catimg">Upload Image:</label>
+            <input class="form-control" type="file" id="catimg" name="catimg" required>
             <br>
             <!-- Submit button -->
             <input class="list-form-btn" type="submit" value="Submit">

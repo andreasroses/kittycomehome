@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +84,9 @@
             }
         } else {
             // Display a message if the cat profile is not found
-            echo "<p>Cat profile not found.</p>";
+            ?>
+                <h1 style="font-family: 'Playpen Sans', fantasy; color: #3d3737; margin-left: 2em;">No posts yet!</h1>
+            <?php
         }
 
         // Close the database connection

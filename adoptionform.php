@@ -20,7 +20,7 @@
     </div>
     <div class="adoption-form-container">
     <h2>Cat Adoption Fostering Form</h2>
-    <form action="php-scripts/process_adoption_form.php" method="post">
+    <form action="./php-scripts/process_adoption_form.php" method="post">
         <h3>Applicant Information:</h3>
         <div style="display: inline-block; width: 49%;">
             <label for="firstName">First Name:</label>
@@ -54,6 +54,7 @@
         <label for="currentPets">Current Pets:</label>
         <input type="radio" name="currentPets" value="Yes">Yes
         <input  type="radio" name="currentPets" value="No">No
+        <br/>
         <label for="numberOfPets">How many:</label>
         <input class="form-control" type="number" name="numberOfPets" min="0">
         <label for="species">What species:</label>
