@@ -25,7 +25,11 @@
     include 'php-scripts/config.php';
 
     // Get the cat name from the URL parameter
-    $account_id = $_SESSION['user_id'];
+    $account_id = isset($_GET['account_id']) ? mysqli_real_escape_string($db_conn, $_GET['account_id']) : '';
+
+    if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $account_id){
+        header("Location: ./useraccount.php");
+    }
     // Fetch cat information based on the cat name
     $query = "SELECT * FROM accounts WHERE account_id = '$account_id'";
     $result = $db_conn->query($query);
@@ -41,16 +45,11 @@
         <div class="left-column">
             <div class="cat-pfp-container">
                 <img src="<?php echo $row['account_imgsrc']?>">
+                <img class="heart-icon" src="./images/filled-heart.png">
             </div>
             <div class="cat-info-container">
                 <div>
                     <h2 style="text-align: center;"><?php echo $row['account_fname']." ".$row['account_lname'] ?></h2>
-                    <div class="centered-div">
-                        <a class="list-form-btn" href="./createpost.php" style="float:none;">Create Post</a>
-                        <form action="./php-scripts/log-out.php" method="POST" style="margin-top:1em;">
-                            <button type="submit" class="formButton" style="font-size:large;">Log Out</button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>

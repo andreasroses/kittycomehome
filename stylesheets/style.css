@@ -280,6 +280,31 @@ footer{
     border:#3d3737 solid 1px;
 }
 
+.post-card2{
+    background-color:#ffaac6;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    font-family: "Playpen Sans", fantasy;
+    text-decoration: none;
+    color:#3d3737;
+    font-weight: bold;
+}
+.centered-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post-card2 img{
+    object-fit: cover;
+    width: 15em;
+    height: 15em;
+    border-radius: 0.5em;
+}
+
 .cat-pfp{
     width: 70%;
     object-fit: contain;

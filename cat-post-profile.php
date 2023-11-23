@@ -65,7 +65,7 @@
                     <p><strong>Good with kids?: </strong><?php echo $isgoodwithkids ?></p>
                 </div>
                 <a href="./adoptionform.php" class="list-form-btn" style="float: none; text-align: center;">Apply to Adopt</a>
-                <a href="" class="list-form-btn" style="float: none; text-align: center; margin-top: 1em;">Owner Profile</a>
+                <a href="./account.php?account_id=<?php echo $row['account_id']?>" class="list-form-btn" style="float: none; text-align: center; margin-top: 1em;">Owner Profile</a>
             </div>
         </div>
         <div class="right-column">

@@ -39,4 +39,5 @@ if (!$result) {
 
 // Close the database connection
 $db_conn->close();
+header("Location: ../index.php");
 ?>

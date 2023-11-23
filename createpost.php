@@ -24,7 +24,7 @@
     <form class="create-post-container" action="./php-scripts/uploadpost.php" method="POST" enctype="multipart/form-data">
         <h2 style="text-align: center;">Create a New Post</h2>
         <label forHTML="cat">Which of your listed cats is shown in this post?</label>
-        <select name="cat" id="cat" class="form-control" style="width: 100%;" required>
+        <select title="Choose a cat" name="cat" id="cat" class="form-control" style="width: 100%;" oninvalid="this.setCustomValidity('You must list a cat to create a post!')" required>
             <?php
                 include 'php-scripts/config.php';
                 $account_id = $_SESSION['user_id'];
@@ -42,9 +42,9 @@
             ?>
         </select>
         <br/>
-        <input class="form-control" type="file" name="postimg" id="postimg" style="width: 95%;" required>
+        <input title="Upload a photo" class="form-control" type="file" name="postimg" id="postimg" style="width: 95%;" required>
         <br/>
-        <textarea class="form-control" name="desc" id="desc" placeholder="Photo Description" style="width: 95%; resize: none;"></textarea>
+        <textarea title="Caption your photo" class="form-control" name="desc" id="desc" placeholder="Photo Description" style="width: 95%; resize: none;"></textarea>
         <button type="submit" class="list-form-btn">Post</button>
             </form>
     </div>
