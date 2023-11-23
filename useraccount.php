@@ -48,8 +48,9 @@
                     <div class="centered-div">
                         <a class="list-form-btn" href="./createpost.php" style="float:none;">Create Post</a>
                         <form action="./php-scripts/log-out.php" method="POST" style="margin-top:1em;">
-                            <button type="submit" class="formButton" style="font-size:large;">Log Out</button>
+                            <button type="submit" class="formButton" style="font-size:large; margin-bottom: 1em;">Log Out</button>
                         </form>
+                        <a class="list-form-btn" style="float: none; text-align: center; width: 100%; display: inline-block;" href="./php-scripts/delete-account.php?account_id=<?php echo $_SESSION['user_id']; ?>">Delete Account</a>
                     </div>
                 </div>
             </div>

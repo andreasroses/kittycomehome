@@ -58,7 +58,7 @@
                 </div>
                 <div>
                     <?php
-                        if(isset($_SESSION['user_id']) && $_SESSION['isadmin'] == 1){
+                        if(isset($_SESSION['user_id']) && ($_SESSION['isadmin'] == 1 || $_SESSION['user_id'] == $row['account_id'])){
                             ?><a class="list-form-btn" style="margin-left: 1em;" href="./php-scripts/delete-cat.php?cat_id=<?php echo $row['cat_id']; ?>">Delete</a><?php
                         }
                     ?>

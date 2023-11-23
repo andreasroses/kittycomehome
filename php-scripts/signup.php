@@ -13,20 +13,19 @@ function getFilename($uploadDir, $ogName) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $uploadDir = __DIR__ . "/../images/";
-    $profPic = $_FILES['profPic'];
-    
-    if ($profPic['error'] === UPLOAD_ERR_OK) {
-        $fileName = getFilename($uploadDir, basename($profPic['name']));
-        $uploadPath = $uploadDir . $fileName;
+    $uploadDir = './../images/';
+    $normalDir = './images/';
+    $uploadFile = $uploadDir . basename($_FILES['profPic']['name']);
+    $readFile = $normalDir . basename($_FILES['profPic']['name']);
 
-        if (move_uploaded_file($profPic['tmp_name'], $uploadPath)) {
-            require_once("config.php");
+    if (move_uploaded_file($_FILES['profPic']['tmp_name'], $uploadFile)) {
+        echo "Image uploaded successfully!";
+        require_once("config.php");
             $fname = $_POST["fname"];
             $lname = $_POST["lname"];
             $email = $_POST["email"];
             $pwd = $_POST["pwd"];
-            $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$uploadPath')";
+            $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$readFile')";
             
             if ($db_conn->query($sql) === TRUE) {
                 echo "User registered successfully!";
@@ -34,17 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['fname'] = $fname;
                 $_SESSION['lname'] = $lname;
-                $_SESSION['pfpimg'] = $uploadPath;
+                $_SESSION['isadmin'] = 0;
+                $_SESSION['pfpimg'] = $readFile;
                 header("Location: ../useraccount.php");
                 exit();
-            } else {
-                echo "Error: " . $sql . "<br>" . $db_conn->error;
             }
-        } else {
-            echo "Error moving uploaded file.";
-        }
-    } else {
-        echo "Error uploading profile picture.";
+    }
+    else {
+        die("Image upload failed.");
     }
 }
 ?>
