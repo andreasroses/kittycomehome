@@ -16,6 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['fname'] = $row['account_fname'];
             $_SESSION['lname'] = $row['account_lname'];
             $_SESSION['pfpimg'] = $row['account_imgsrc'];
+            if($row['account_id'] == 1){
+                $_SESSION['isadmin'] = 1;
+            }
+            else{
+                $_SESSION['isadmin'] = 0;
+            }
             // Redirect to the user's account page
             header("Location: ../useraccount.php");
             exit();

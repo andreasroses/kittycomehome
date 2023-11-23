@@ -50,6 +50,11 @@
             <div class="post-container">
                 <img src="<?php echo $row['post_imgsrc']?>">
                  <p><a><strong><?php echo $accountname;?>: </strong></a> <?php echo $row['post_desc'];?></p>
+                 <?php
+                        if(isset($_SESSION['user_id']) && $_SESSION['isadmin'] == 1){
+                            ?><a class="list-form-btn" href="./php-scripts/delete-post.php?post_id=<?php echo $row['post_id']; ?>">Delete</a><?php
+                        }
+                    ?>
             </div>
             <?php
             

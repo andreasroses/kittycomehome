@@ -57,6 +57,11 @@
                     <p class="cat-info"><strong>Good with kids?</strong> <?php echo $isgoodwithkids ?></p>
                 </div>
                 <div>
+                    <?php
+                        if(isset($_SESSION['user_id']) && $_SESSION['isadmin'] == 1){
+                            ?><a class="list-form-btn" style="margin-left: 1em;" href="./php-scripts/delete-cat.php?cat_id=<?php echo $row['cat_id']; ?>">Delete</a><?php
+                        }
+                    ?>
                     <a class="list-form-btn" href="./cat-post-profile.php?cat_id=<?php echo $cat_id ?>">Go to Profile</a>
                 </div>
             </div>

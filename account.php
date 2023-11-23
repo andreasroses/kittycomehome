@@ -50,6 +50,11 @@
             <div class="cat-info-container">
                 <div>
                     <h2 style="text-align: center;"><?php echo $row['account_fname']." ".$row['account_lname'] ?></h2>
+                    <?php
+                        if(isset($_SESSION['user_id']) && $_SESSION['isadmin'] == 1){
+                            ?><a class="list-form-btn" style="float: none; text-align: center; width: 100%; display: inline-block;" href="./php-scripts/delete-account.php?account_id=<?php echo $row['account_id']; ?>">Delete</a><?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
