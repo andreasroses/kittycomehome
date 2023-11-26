@@ -63,17 +63,23 @@
                         <label for="security_question">Security Question:</label>
                         <select name="security_question" required>
                             <option value="100">What is your mother's maiden name?</option>
-                        </select>
-                    </td>
-                    <td>
-                        <label for="security_question">Security Question:</label>
-                        <select name="security_question" required>
                             <option value="101">What was the name of your favorite teacher?</option>
+                            <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
                         </select>
                     </td>
                     <td>
                         <label for="security_question">Security Question:</label>
                         <select name="security_question" required>
+                            <option value="100">What is your mother's maiden name?</option>
+                            <option value="101">What was the name of your favorite teacher?</option>
+                            <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
+                        </select>
+                    </td>
+                                        <td>
+                        <label for="security_question">Security Question:</label>
+                        <select name="security_question" required>
+                            <option value="100">What is your mother's maiden name?</option>
+                            <option value="101">What was the name of your favorite teacher?</option>
                             <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
                         </select>
                     </td>
