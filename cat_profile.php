@@ -50,7 +50,7 @@
             <div class="cat-profile-inner">
                 <img class="cat-pfp" src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
                 <h2 class="cat-name"><?php echo $row['cat_name']; ?></h2>
-                <div class="heart-button" onclick="toggleHeart(event, <?php echo $row['cat_id']; ?>)">&#10084;</div>
+                <button class="favorite-button" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button>
                 <div style="margin-bottom: 1em;">
                     <p class="cat-info"><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
                     <p class="cat-info"><strong>Good with cats?</strong> <?php echo $isgoodwithcats ?></p>
@@ -78,37 +78,22 @@
     ?>
     <footer></footer>
 
-
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var heartButton = document.querySelector('.heart-button');
-        if (heartButton) {
-            heartButton.addEventListener('click', function (event) {
-                event.stopPropagation();
-                toggleHeart(event, <?php echo $row['cat_id']; ?>);
-            });
+        function toggleFavorite(catId) {
+            // Send an AJAX request to handle favoriting
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Handle the response, if needed
+                    console.log(this.responseText);
+                    // You can add logic here to update the UI based on the response
+                }
+            };
+            xhttp.open("POST", "php-scripts/favorite.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("cat_id=" + catId);
         }
-    });
-
-    function toggleHeart(event, catId) {
-        // Toggle the active class for visual feedback
-        var button = event.currentTarget;
-        button.classList.toggle('active');
-
-        // Send an AJAX request to handle favoriting
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                // Handle the response, if needed
-                console.log(this.responseText);
-            }
-        };
-        xhttp.open("POST", "php-scripts/favorite.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("cat_id=" + catId);
-    }
     </script>
-
 
 </body>
 
