@@ -43,7 +43,7 @@ footer{
     width: 100%; /* Take up the full width of the viewport */
     height: 100%;
     background-color: #ffffff;
-    font-family:fantasy;
+    font-family:"Playpen Sans",sans-serif;
   }
 
   ul {

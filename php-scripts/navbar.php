@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 // navbar.php
 
 if (isset($_SESSION['user_id'])) {
@@ -25,7 +23,6 @@ error_reporting(E_ALL);
         <li class="dropdown">
             <a class="dropdown-link" href="index.php">KittyComeHome</a>
             <ul class="dropdown-content">
-                <li><a href="resources.php">Resources</a></li>
                 <li><a href="aboutUs.php">About Us</a></li>
                 <li><a href="faq.php">FAQ</a></li>
             </ul>
@@ -34,6 +31,7 @@ error_reporting(E_ALL);
         <div class="vl"></div>
         <?php echo $fav; ?>
         <?php echo $list; ?>
+        <li><a href="resources.php">Resources</a></li>
         <li><a href="foster.php" class="nav-link">Foster</a></li>
     </ul>
 </nav>
