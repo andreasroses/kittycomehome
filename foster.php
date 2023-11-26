@@ -108,8 +108,12 @@
     </div>
     <footer></footer>
     <script>
-    function toggleHeart(button, catId) {
+    function toggleHeart(event, catId) {
+        // Stop the event propagation to prevent clicking on the card/link
+        event.stopPropagation();
+
         // Toggle the active class for visual feedback
+        var button = event.target;
         button.classList.toggle('active');
 
         // Send an AJAX request to handle favoriting
@@ -125,6 +129,7 @@
         xhttp.send("cat_id=" + catId);
     }
 </script>
+
 
 </body>
 
