@@ -50,7 +50,6 @@
             <div class="cat-profile-inner">
                 <img class="cat-pfp" src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
                 <h2 class="cat-name"><?php echo $row['cat_name']; ?></h2>
-                <button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button>
                 <div style="margin-bottom: 1em;">
                     <p class="cat-info"><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
                     <p class="cat-info"><strong>Good with cats?</strong> <?php echo $isgoodwithcats ?></p>
@@ -63,6 +62,7 @@
                             ?><a class="list-form-btn" style="margin-left: 1em;" href="./php-scripts/delete-cat.php?cat_id=<?php echo $row['cat_id']; ?>">Delete</a><?php
                         }
                     ?>
+                    <button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button>
                     <a class="list-form-btn" href="./cat-post-profile.php?cat_id=<?php echo $cat_id ?>">Go to Profile</a>
                 </div>
             </div>
