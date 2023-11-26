@@ -31,7 +31,7 @@ error_reporting(E_ALL);
         <div class="vl"></div>
         <?php echo $fav; ?>
         <?php echo $list; ?>
-        <li><a href="resources.php">Resources</a></li>
+        <li><a href="resources.php" class="nav-link">Resources</a></li>
         <li><a href="foster.php" class="nav-link">Foster</a></li>
     </ul>
 </nav>
