@@ -57,6 +57,11 @@
         // Check if a search query is submitted
     if (isset($_GET['searchBy'])) {
     $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
+    // Check if the "Favorites" toggle is checked
+    $favoritedOnly = isset($_GET['favoritedOnly']) && $_GET['favoritedOnly'] == 'on';
+    // Get the user's ID from the session
+    $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
         switch ($searchBy) {
             case 'cat_isgoodwithcats':
             case 'cat_isgoodwithdogs':
@@ -72,12 +77,23 @@
                 $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Female'";
                 break;
             default:
-                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
+                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
+                // If "Favorites" toggle is checked and a user is logged in, filter by favorited cats
+                if ($favoritedOnly && $userId) {
+                    $query .= " WHERE cat_id IN (SELECT cat_id FROM favorite WHERE account_id = $userId)";
+                }
+                
+                $query .= " ORDER BY $searchBy";
                 break;
         }
     } else {
         // Default query to fetch all cat information
-        $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
+        // If "Favorites" toggle is checked and a user is logged in, filter by favorited cats
+        if ($favoritedOnly && $userId) {
+            $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_id IN (SELECT cat_id FROM favorite WHERE account_id = $userId)";
+        } else {
+            $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
+        }
     }
         $result = $db_conn->query($query);
 
