@@ -49,7 +49,7 @@
         <div class="cat-profile-container">
             <div class="cat-profile-inner">
                 <img class="cat-pfp" src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                <h2 class="cat-name"><?php echo $row['cat_name']; ?></h2>
+                <h2 class="cat-name"><?php echo $row['cat_name']; ?> <div class="heart-button" onclick="toggleHeart(event, <?php echo $row['cat_id']; ?>)">&#10084;</div> </h2>
                 <div style="margin-bottom: 1em;">
                     <p class="cat-info"><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
                     <p class="cat-info"><strong>Good with cats?</strong> <?php echo $isgoodwithcats ?></p>
@@ -76,6 +76,29 @@
     $db_conn->close();
     ?>
     <footer></footer>
+    <script>
+    function toggleHeart(event, catId) {
+        // Stop the event propagation to prevent clicking on the card/link
+        event.stopPropagation();
+
+        // Toggle the active class for visual feedback
+        var button = event.currentTarget;
+        button.classList.toggle('active');
+
+        // Send an AJAX request to handle favoriting
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Handle the response, if needed
+                console.log(this.responseText);
+            }
+        };
+        xhttp.open("POST", "php-scripts/favorite.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("cat_id=" + catId);
+    }
+</script>
+
 </body>
 
 </html>
