@@ -56,7 +56,7 @@
                     <p class="cat-info"><strong>Good with dogs?</strong> <?php echo $isgoodwithdogs ?></p>
                     <p class="cat-info"><strong>Good with kids?</strong> <?php echo $isgoodwithkids ?></p>
                 </div>
-                <div><button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button><br></div>
+                <div><button id="favoriteButton" class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button><br></div>
                 <div>
                     <?php
                         if(isset($_SESSION['user_id']) && ($_SESSION['isadmin'] == 1 || $_SESSION['user_id'] == $row['account_id'])){
@@ -80,19 +80,44 @@
 
     <script>
         function toggleFavorite(catId) {
-            console.log(catId);
+            // Check if the user is logged in
+            <?php if (!isset($_SESSION['user_id'])) : ?>
+                window.location.href = "/login-pg.php";
+                return;
+            <?php endif; ?>
+
             // Send an AJAX request to handle favoriting
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     // Handle the response, if needed
                     console.log(this.responseText);
-                    // You can add logic here to update the UI based on the response
+                    handleFavoriteResponse(this.responseText, catId);
                 }
             };
             xhttp.open("POST", "php-scripts/favorite.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
             xhttp.send("cat_id=" + catId);
+        }
+
+        function handleFavoriteResponse(response, catId) {
+            var button = document.getElementById("favoriteButton");
+
+            // Parse the response, assuming it's a JSON object
+            var data = JSON.parse(response);
+
+            // Check if the cat is in favorites or not
+            if (data.added) {
+                // Cat has been added to favorites
+                button.innerHTML = "Remove from Favorites";
+                // Add any other visual changes you want to indicate favoriting
+                alert("Cat added to favorites!");
+            } else {
+                // Cat has been removed from favorites
+                button.innerHTML = "Add to Favorites";
+                // Revert any visual changes made during favoriting
+                alert("Cat removed from favorites!");
+            }
         }
     </script>
 
