@@ -92,6 +92,6 @@
             showCard(currentIndex);
         });
     </script>
-    <footer></footer>
 </body>
+<footer></footer>
 </html>
