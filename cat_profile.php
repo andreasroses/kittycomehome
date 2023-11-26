@@ -56,13 +56,13 @@
                     <p class="cat-info"><strong>Good with dogs?</strong> <?php echo $isgoodwithdogs ?></p>
                     <p class="cat-info"><strong>Good with kids?</strong> <?php echo $isgoodwithkids ?></p>
                 </div>
+                <div><button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button></div>
                 <div>
                     <?php
                         if(isset($_SESSION['user_id']) && ($_SESSION['isadmin'] == 1 || $_SESSION['user_id'] == $row['account_id'])){
                             ?><a class="list-form-btn" style="margin-left: 1em;" href="./php-scripts/delete-cat.php?cat_id=<?php echo $row['cat_id']; ?>">Delete</a><?php
                         }
                     ?>
-                    <button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button>
                     <a class="list-form-btn" href="./cat-post-profile.php?cat_id=<?php echo $cat_id ?>">Go to Profile</a>
                 </div>
             </div>
