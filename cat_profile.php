@@ -100,26 +100,28 @@
             xhttp.send("cat_id=" + catId);
         }
 
-        function handleFavoriteResponse(response, catId) {
-            var button = document.getElementById("favoriteButton");
+        function handleFavoriteResponse() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Assuming the response is a string message
+                var responseText = this.responseText;
+                console.log("Server Response:", responseText);
 
-            // Assuming the response is a string message
-            console.log("Server Response:", responseText);
-
-            // Display a message to the user based on the response
-            if (responseText.includes("Cat added to favorites!")) {
-                // Cat was added to favorites
-                alert("Cat added to favorites!");
-                // You can also update the UI, change button appearance, etc.
-            } else if (responseText.includes("Cat removed from favorites!")) {
-                // Cat was removed from favorites
-                alert("Cat removed from favorites!");
-                // You can also update the UI, change button appearance, etc.
-            } else {
-                // Handle other responses or errors as needed
-                console.log("Unexpected server response:", responseText);
+                // Display a message to the user based on the response
+                if (responseText.includes("Cat added to favorites!")) {
+                    // Cat was added to favorites
+                    alert("Cat added to favorites!");
+                    // You can also update the UI, change button appearance, etc.
+                } else if (responseText.includes("Cat removed from favorites!")) {
+                    // Cat was removed from favorites
+                    alert("Cat removed from favorites!");
+                    // You can also update the UI, change button appearance, etc.
+                } else {
+                    // Handle other responses or errors as needed
+                    console.log("Unexpected server response:", responseText);
+                }
             }
         }
+
     </script>
 
 </body>
