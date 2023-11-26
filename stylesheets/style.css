@@ -381,10 +381,12 @@ footer{
     cursor: pointer;
     font-size: 24px;
     color: #ccc;
+    z-index: 5;
 }
 
 .heart-button.active {
     color: red;
+    z-index: 5;
 }
 
 .gallery-container-carousel {
