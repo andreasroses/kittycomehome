@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $lname = $_POST["lname"];
             $email = $_POST["email"];
             $pwd = $_POST["pwd"];
+            $securityQuestionId = $_POST["security_question"];  
+            $securityAnswer = $_POST["security_answer"];  
             $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$readFile')";
             
             if ($db_conn->query($sql) === TRUE) {
@@ -37,10 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['pfpimg'] = $readFile;
                 header("Location: ../useraccount.php");
                 exit();
+            }else {
+                echo "Error adding security question and answer: " . $db_conn->error;
             }
-    }
-    else {
+        } else {
+            echo "Error adding user: " . $db_conn->error;
+        }
+    }else {
         die("Image upload failed.");
-    }
 }
+
 ?>
