@@ -31,9 +31,6 @@
     <!-- Search form -->
     <div class="search-container">
             <form method="GET" action="">
-            <!-- Toggle input for favorited objects -->
-            <label for="favoritedOnly">Favorites</label>
-            <input type="checkbox" id="favoritedOnly" name="favoritedOnly">
             <select name="searchBy" id="searchByDropdown"class="search-dropdown">
                 <option value="cat_Male">Male</option>
                 <option value="cat_Female">Female</option>
@@ -41,8 +38,6 @@
                 <option value="cat_isgoodwithdogs">Good with Dogs</option>
                 <option value="cat_isgoodwithkids">Good with Kids</option>
             </select>
-            
-
         <button type="submit">Search</button>
         <button><a href="./images/adoption-form.pdf">Download Adoption/Foster Form</a></button>
             </form>
@@ -57,11 +52,6 @@
         // Check if a search query is submitted
     if (isset($_GET['searchBy'])) {
     $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
-    // Check if the "Favorites" toggle is checked
-    $favoritedOnly = isset($_GET['favoritedOnly']) && $_GET['favoritedOnly'] == 'on';
-    // Get the user's ID from the session
-    $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-
         switch ($searchBy) {
             case 'cat_isgoodwithcats':
             case 'cat_isgoodwithdogs':
@@ -77,23 +67,12 @@
                 $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Female'";
                 break;
             default:
-                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
-                // If "Favorites" toggle is checked and a user is logged in, filter by favorited cats
-                if ($favoritedOnly && $userId) {
-                    $query .= " WHERE cat_id IN (SELECT cat_id FROM favorite WHERE account_id = $userId)";
-                }
-                
-                $query .= " ORDER BY $searchBy";
+                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
                 break;
         }
     } else {
         // Default query to fetch all cat information
-        // If "Favorites" toggle is checked and a user is logged in, filter by favorited cats
-        if ($favoritedOnly && $userId) {
-            $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_id IN (SELECT cat_id FROM favorite WHERE account_id = $userId)";
-        } else {
-            $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
-        }
+        $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
     }
         $result = $db_conn->query($query);
 
@@ -104,12 +83,13 @@
                 ?>
         
         <div class="card">
-            <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>" class="kitty-card">
-                <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                <p><?php echo $row['cat_name']; ?></p>
+            <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>">
+                <div class="kitty-card">
+                    <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                    <p><?php echo $row['cat_name']; ?></p>
+                </div>
             </a>
         </div>
-
         <?php
         }
         } else {
@@ -121,7 +101,6 @@
         ?>
     </div>
     <footer></footer>
-    
 </body>
 
 </html>
