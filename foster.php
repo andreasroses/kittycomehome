@@ -31,6 +31,9 @@
     <!-- Search form -->
     <div class="search-container">
             <form method="GET" action="">
+            <!-- Toggle input for favorited objects -->
+            <label for="favoritedOnly">Favorites</label>
+            <input type="checkbox" id="favoritedOnly" name="favoritedOnly">
             <select name="searchBy" id="searchByDropdown"class="search-dropdown">
                 <option value="cat_Male">Male</option>
                 <option value="cat_Female">Female</option>
@@ -38,6 +41,8 @@
                 <option value="cat_isgoodwithdogs">Good with Dogs</option>
                 <option value="cat_isgoodwithkids">Good with Kids</option>
             </select>
+            
+
         <button type="submit">Search</button>
         <button><a href="./images/adoption-form.pdf">Download Adoption/Foster Form</a></button>
             </form>
