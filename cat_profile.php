@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include 'php-scripts/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,6 +81,7 @@
 
     <script>
         function toggleFavorite(catId) {
+            console.log(catId);
             // Send an AJAX request to handle favoriting
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
