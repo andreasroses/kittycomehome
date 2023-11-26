@@ -89,13 +89,13 @@
         
         <div class="card">
         <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>">
+        <div class="heart-button">&#10084;</div>
         <div class="kitty-card">
             <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
             
                 <p><?php echo $row['cat_name']; ?></p>
             </div>
             </a>
-            <div class="heart-button">&#10084;</div>
         </div>
         <?php
         }
