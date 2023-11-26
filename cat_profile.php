@@ -92,6 +92,7 @@
                 if (this.readyState == 4 && this.status == 200) {
                     // Handle the response, if needed
                     console.log(this.responseText);
+                    alert(this.responseText);
                     handleFavoriteResponse(this.responseText, catId);
                 }
             };
@@ -102,19 +103,14 @@
 
         function handleFavoriteResponse() {
             if (this.readyState == 4 && this.status == 200) {
-                // Assuming the response is a string message
                 var responseText = this.responseText;
                 console.log("Server Response:", responseText);
 
                 // Display a message to the user based on the response
                 if (responseText.includes("Cat added to favorites!")) {
-                    // Cat was added to favorites
-                    alert("Cat added to favorites!");
-                    // You can also update the UI, change button appearance, etc.
+                    button.innerHTML = "Remove from Favorites";
                 } else if (responseText.includes("Cat removed from favorites!")) {
-                    // Cat was removed from favorites
-                    alert("Cat removed from favorites!");
-                    // You can also update the UI, change button appearance, etc.
+                    button.innerHTML = "Favorite";
                 } else {
                     // Handle other responses or errors as needed
                     console.log("Unexpected server response:", responseText);
