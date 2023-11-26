@@ -2,10 +2,8 @@
 session_start();
 include 'config.php';
 
-echo "account_id: $account_id, cat_id: $cat_id";
-
-if (isset($_SESSION['account_id']) && isset($_POST['cat_id'])) {
-    $account_id = $_SESSION['account_id'];
+if (isset($_SESSION['user_id']) && isset($_POST['cat_id'])) {
+    $account_id = $_SESSION['user_id'];  // Change this line to use 'user_id'
     $cat_id = mysqli_real_escape_string($db_conn, $_POST['cat_id']);
 
     // Check if the cat is already in favorites
