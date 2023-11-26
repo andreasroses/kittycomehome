@@ -1,6 +1,5 @@
 <?php
     session_start();
-    include 'php-scripts/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +22,7 @@
     </div>
 
     <?php
-    //include 'php-scripts/config.php';
+    include 'php-scripts/config.php';
 
     // Get the cat name from the URL parameter
     $cat_id = isset($_GET['cat_id']) ? mysqli_real_escape_string($db_conn, $_GET['cat_id']) : '';
@@ -51,7 +50,7 @@
             <div class="cat-profile-inner">
                 <img class="cat-pfp" src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
                 <h2 class="cat-name"><?php echo $row['cat_name']; ?></h2>
-                <button class="favorite-button" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button>
+                <button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button>
                 <div style="margin-bottom: 1em;">
                     <p class="cat-info"><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
                     <p class="cat-info"><strong>Good with cats?</strong> <?php echo $isgoodwithcats ?></p>
@@ -92,7 +91,7 @@
                 }
             };
             xhttp.open("POST", "php-scripts/favorite.php", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
             xhttp.send("cat_id=" + catId);
         }
     </script>
