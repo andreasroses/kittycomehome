@@ -88,12 +88,10 @@
                 ?>
         
         <div class="card">
-            <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>">
-                <div class="kitty-card">
-                    <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                    <div class="heart-button" onclick="toggleHeart(event, <?php echo $row['cat_id']; ?>)">&#10084;</div>
-                    <p><?php echo $row['cat_name']; ?></p>
-                </div>
+            <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>" class="kitty-card">
+                <div class="heart-button" onclick="toggleHeart(event, <?php echo $row['cat_id']; ?>)">&#10084;</div>
+                <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                <p><?php echo $row['cat_name']; ?></p>
             </a>
         </div>
 
@@ -114,7 +112,7 @@
         event.stopPropagation();
 
         // Toggle the active class for visual feedback
-        var button = event.target;
+        var button = event.currentTarget;
         button.classList.toggle('active');
 
         // Send an AJAX request to handle favoriting
@@ -130,6 +128,7 @@
         xhttp.send("cat_id=" + catId);
     }
 </script>
+
 
 </body>
 
