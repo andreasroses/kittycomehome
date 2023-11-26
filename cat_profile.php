@@ -27,10 +27,6 @@
     // Get the cat name from the URL parameter
     $cat_id = isset($_GET['cat_id']) ? mysqli_real_escape_string($db_conn, $_GET['cat_id']) : '';
 
-    // Debugging: Output the current session variables
-    echo "Session Data: ";
-    print_r($_SESSION);
-
     // Fetch cat information based on the cat name
     $query = "SELECT * FROM fostercat WHERE cat_id = '$cat_id'";
     $result = $db_conn->query($query);
