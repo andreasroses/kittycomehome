@@ -23,7 +23,7 @@
     </div>
 
     <?php
-    include 'php-scripts/config.php';
+    //include 'php-scripts/config.php';
 
     // Get the cat name from the URL parameter
     $cat_id = isset($_GET['cat_id']) ? mysqli_real_escape_string($db_conn, $_GET['cat_id']) : '';
