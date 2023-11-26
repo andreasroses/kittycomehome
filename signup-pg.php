@@ -59,42 +59,54 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <label for="security_question">Security Question:</label>
-                        <select name="security_question" required>
-                            <option value="100">What is your mother's maiden name?</option>
-                            <option value="101">What was the name of your favorite teacher?</option>
-                            <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
-                        </select>
-                    </td>
-                    <td>
-                        <label for="security_question">Security Question:</label>
-                        <select name="security_question" required>
-                            <option value="100">What is your mother's maiden name?</option>
-                            <option value="101">What was the name of your favorite teacher?</option>
-                            <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
-                        </select>
-                    </td>
-                                        <td>
-                        <label for="security_question">Security Question:</label>
-                        <select name="security_question" required>
-                            <option value="100">What is your mother's maiden name?</option>
-                            <option value="101">What was the name of your favorite teacher?</option>
-                            <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
-                        </select>
-                    </td>
-                    <td>
-                        <label for="security_answer">Security Answer:</label>
-                        <input class="form-control" type="text" name="security_answer" required>
-                    </td>
-                </tr>
-                <tr class="fixPadding">
-                    <td colspan="2">
-                        <div class="submit-button-container">
-                            <input class="list-form-btn" type="submit" value="Sign Up">
-                        </div>
-                    </td>
-                </tr>
+                        <td>
+                            <label for="security_question1">Security Question 1:</label>
+                            <select name="security_question1" required>
+                                <option value="100">What is your mother's maiden name?</option>
+                                <option value="101">What was the name of your favorite teacher?</option>
+                                <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="security_answer1">Security Answer 1:</label>
+                            <input class="form-control" type="text" name="security_answer1" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="security_question2">Security Question 2:</label>
+                            <select name="security_question2" required>
+                                <option value="100">What is your mother's maiden name?</option>
+                                <option value="101">What was the name of your favorite teacher?</option>
+                                <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="security_answer2">Security Answer 2:</label>
+                            <input class="form-control" type="text" name="security_answer2" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="security_question3">Security Question 3:</label>
+                            <select name="security_question3" required>
+                                <option value="100">What is your mother's maiden name?</option>
+                                <option value="101">What was the name of your favorite teacher?</option>
+                                <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="security_answer3">Security Answer 3:</label>
+                            <input class="form-control" type="text" name="security_answer3" required>
+                        </td>
+                    </tr>
+                    <tr class="fixPadding">
+                        <td colspan="2">
+                            <div class="submit-button-container">
+                                <input class="list-form-btn" type="submit" value="Sign Up">
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </form>
         </div>
