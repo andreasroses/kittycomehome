@@ -77,7 +77,19 @@
     $db_conn->close();
     ?>
     <footer></footer>
+
+
     <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var heartButton = document.querySelector('.heart-button');
+        if (heartButton) {
+            heartButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+                toggleHeart(event, <?php echo $row['cat_id']; ?>);
+            });
+        }
+    });
+
     function toggleHeart(event, catId) {
         // Toggle the active class for visual feedback
         var button = event.currentTarget;
@@ -95,7 +107,8 @@
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("cat_id=" + catId);
     }
-</script>
+    </script>
+
 
 </body>
 
