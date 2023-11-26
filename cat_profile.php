@@ -49,7 +49,8 @@
         <div class="cat-profile-container">
             <div class="cat-profile-inner">
                 <img class="cat-pfp" src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                <h2 class="cat-name"><?php echo $row['cat_name']; ?> <div class="heart-button" onclick="toggleHeart(event, <?php echo $row['cat_id']; ?>)">&#10084;</div> </h2>
+                <h2 class="cat-name"><?php echo $row['cat_name']; ?></h2>
+                <div class="heart-button" onclick="toggleHeart(event, <?php echo $row['cat_id']; ?>)">&#10084;</div>
                 <div style="margin-bottom: 1em;">
                     <p class="cat-info"><strong>Gender:</strong> <?php echo $row['cat_gender']; ?></p>
                     <p class="cat-info"><strong>Good with cats?</strong> <?php echo $isgoodwithcats ?></p>
@@ -78,9 +79,6 @@
     <footer></footer>
     <script>
     function toggleHeart(event, catId) {
-        // Stop the event propagation to prevent clicking on the card/link
-        event.stopPropagation();
-
         // Toggle the active class for visual feedback
         var button = event.currentTarget;
         button.classList.toggle('active');
