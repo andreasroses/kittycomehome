@@ -38,6 +38,10 @@
                 <option value="cat_isgoodwithdogs">Good with Dogs</option>
                 <option value="cat_isgoodwithkids">Good with Kids</option>
             </select>
+            <!-- Toggle input for favorited objects -->
+            <label for="favoritedOnly">Favorited Only</label>
+            <input type="checkbox" id="favoritedOnly" name="favoritedOnly">
+
         <button type="submit">Search</button>
         <button><a href="./images/adoption-form.pdf">Download Adoption/Foster Form</a></button>
             </form>
