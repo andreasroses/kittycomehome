@@ -101,23 +101,6 @@
             xhttp.send("cat_id=" + catId);
         }
 
-        function handleFavoriteResponse() {
-            if (this.readyState == 4 && this.status == 200) {
-                var responseText = this.responseText;
-                console.log("Server Response:", responseText);
-
-                // Display a message to the user based on the response
-                if (responseText.includes("Cat added to favorites!")) {
-                    button.innerHTML = "Remove from Favorites";
-                } else if (responseText.includes("Cat removed from favorites!")) {
-                    button.innerHTML = "Favorite";
-                } else {
-                    // Handle other responses or errors as needed
-                    console.log("Unexpected server response:", responseText);
-                }
-            }
-        }
-
     </script>
 
 </body>
