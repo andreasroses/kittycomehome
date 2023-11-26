@@ -103,20 +103,21 @@
         function handleFavoriteResponse(response, catId) {
             var button = document.getElementById("favoriteButton");
 
-            // Parse the response, assuming it's a JSON object
-            var data = JSON.parse(response);
+            // Assuming the response is a string message
+            console.log("Server Response:", responseText);
 
-            // Check if the cat is in favorites or not
-            if (data.added) {
-                // Cat has been added to favorites
-                button.innerHTML = "Remove from Favorites";
-                // Add any other visual changes you want to indicate favoriting
+            // Display a message to the user based on the response
+            if (responseText.includes("Cat added to favorites!")) {
+                // Cat was added to favorites
                 alert("Cat added to favorites!");
-            } else {
-                // Cat has been removed from favorites
-                button.innerHTML = "Add to Favorites";
-                // Revert any visual changes made during favoriting
+                // You can also update the UI, change button appearance, etc.
+            } else if (responseText.includes("Cat removed from favorites!")) {
+                // Cat was removed from favorites
                 alert("Cat removed from favorites!");
+                // You can also update the UI, change button appearance, etc.
+            } else {
+                // Handle other responses or errors as needed
+                console.log("Unexpected server response:", responseText);
             }
         }
     </script>
