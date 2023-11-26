@@ -88,15 +88,15 @@
                 ?>
         
         <div class="card">
-        <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>">
-        <div class="heart-button">&#10084;</div>
-        <div class="kitty-card">
-            <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-            
-                <p><?php echo $row['cat_name']; ?></p>
-            </div>
+            <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>">
+                <div class="kitty-card">
+                    <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                    <div class="heart-button" onclick="toggleHeart(event, <?php echo $row['cat_id']; ?>)">&#10084;</div>
+                    <p><?php echo $row['cat_name']; ?></p>
+                </div>
             </a>
         </div>
+
         <?php
         }
         } else {
@@ -109,22 +109,13 @@
     </div>
     <footer></footer>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var kittyCards = document.querySelectorAll('.kitty-card');
-        kittyCards.forEach(function (card) {
-            card.addEventListener('click', function (event) {
-                event.stopPropagation();
-                toggleHeart(this, event);
-            });
-        });
-    });
+    function toggleHeart(event, catId) {
+        // Stop the event propagation to prevent clicking on the card/link
+        event.stopPropagation();
 
-    function toggleHeart(element, event) {
         // Toggle the active class for visual feedback
-        element.querySelector('.heart-button').classList.toggle('active');
-
-        // Extract cat_id from the cat_profile.php link
-        var catId = element.closest('a').getAttribute('href').match(/cat_id=(\d+)/)[1];
+        var button = event.target;
+        button.classList.toggle('active');
 
         // Send an AJAX request to handle favoriting
         var xhttp = new XMLHttpRequest();
@@ -139,6 +130,7 @@
         xhttp.send("cat_id=" + catId);
     }
 </script>
+
 </body>
 
 </html>
