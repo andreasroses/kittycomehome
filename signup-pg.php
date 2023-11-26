@@ -62,9 +62,7 @@
                         <td>
                             <label for="security_question1">Security Question 1:</label>
                             <select name="security_question1" required>
-                                <option value="100">What is your mother's maiden name?</option>
-                                <option value="101">What was the name of your favorite teacher?</option>
-                                <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
+                                <label value="100">What is your mother's maiden name?</label>
                             </select>
                         </td>
                         <td>
@@ -76,9 +74,7 @@
                         <td>
                             <label for="security_question2">Security Question 2:</label>
                             <select name="security_question2" required>
-                                <option value="100">What is your mother's maiden name?</option>
-                                <option value="101">What was the name of your favorite teacher?</option>
-                                <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
+                                <label value="101">What was the name of your favorite teacher?</label>
                             </select>
                         </td>
                         <td>
@@ -90,9 +86,7 @@
                         <td>
                             <label for="security_question3">Security Question 3:</label>
                             <select name="security_question3" required>
-                                <option value="100">What is your mother's maiden name?</option>
-                                <option value="101">What was the name of your favorite teacher?</option>
-                                <option value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</option>
+                                <label value="102">What was your childhood phone number including area code? (e.g., 000-000-0000)</label>
                             </select>
                         </td>
                         <td>
