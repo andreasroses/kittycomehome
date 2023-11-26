@@ -56,7 +56,7 @@
                     <p class="cat-info"><strong>Good with dogs?</strong> <?php echo $isgoodwithdogs ?></p>
                     <p class="cat-info"><strong>Good with kids?</strong> <?php echo $isgoodwithkids ?></p>
                 </div>
-                <div><button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button></div>
+                <div><button class="list-form-btn" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button><br></div>
                 <div>
                     <?php
                         if(isset($_SESSION['user_id']) && ($_SESSION['isadmin'] == 1 || $_SESSION['user_id'] == $row['account_id'])){
