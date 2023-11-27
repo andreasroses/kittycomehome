@@ -32,9 +32,8 @@
     <div class="search-container">
             <form method="GET" action="">
             <!-- Toggle input for favorited objects -->
-            <label for="favoritedOnly">Favorites</label>
-            <input type="checkbox" id="favoritedOnly" name="favoritedOnly">
             <select name="searchBy" id="searchByDropdown"class="search-dropdown">
+                <option value="favorited">Favorites</option>
                 <option value="cat_Male">Male</option>
                 <option value="cat_Female">Female</option>
                 <option value="cat_isgoodwithcats">Good with Cats</option>
@@ -55,71 +54,69 @@
         include 'php-scripts/config.php';
 
         // Check if a search query is submitted
-    if (isset($_GET['searchBy'])) {
-    $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
-    // Check if the "Favorites" toggle is checked
-    $favoritedOnly = isset($_GET['favoritedOnly']) && $_GET['favoritedOnly'] == 'on';
-    // Get the user's ID from the session
-    $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+        if (isset($_GET['searchBy'])) {
+        $searchBy = mysqli_real_escape_string($db_conn, $_GET['searchBy']);
+        // Get the user's ID from the session
+        $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
-        switch ($searchBy) {
-            case 'cat_isgoodwithcats':
-            case 'cat_isgoodwithdogs':
-            case 'cat_isgoodwithkids':
-                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
-                break;
-            case 'cat_Male':
-                $searchBy = 'Male';
-                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Male'";
-                break;
-            case 'cat_Female':
-                $searchBy = 'Female';
-                $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Female'";
-                break;
-            default:
+            switch ($searchBy) {
+                case 'cat_isgoodwithcats':
+                case 'cat_isgoodwithdogs':
+                case 'cat_isgoodwithkids':
+                    $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE $searchBy = 1";
+                    break;
+                case 'cat_Male':
+                    $searchBy = 'Male';
+                    $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Male'";
+                    break;
+                case 'cat_Female':
+                    $searchBy = 'Female';
+                    $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_gender = 'Female'";
+                    break;
+                case 'favorited':
+                    // Display only favorited cats for the logged-in user
+                    if ($userId) {
+                        $query = "SELECT c.cat_id, c.cat_name, c.cat_img_src FROM fostercat c
+                                    JOIN favorite f ON c.cat_id = f.cat_id
+                                    WHERE f.account_id = $userId";
+                    } else {
+                        // If not logged in, show no favorites
+                        $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE 1 = 0";
+                    }
+                    break;
+                default:
+                    $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat ORDER BY $searchBy";
+                    break;
+            }
+        } else {
+            // Default query to fetch all cat information
                 $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
-                // If "Favorites" toggle is checked and a user is logged in, filter by favorited cats
-                if ($favoritedOnly && $userId) {
-                    $query .= " WHERE cat_id IN (SELECT cat_id FROM favorite WHERE account_id = $userId)";
-                }
-                
-                $query .= " ORDER BY $searchBy";
-                break;
         }
-    } else {
-        // Default query to fetch all cat information
-        // If "Favorites" toggle is checked and a user is logged in, filter by favorited cats
-        if ($favoritedOnly && $userId) {
-            $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat WHERE cat_id IN (SELECT cat_id FROM favorite WHERE account_id = $userId)";
-        } else {
-            $query = "SELECT cat_id, cat_name, cat_img_src FROM fostercat";
-        }
-    }
-        $result = $db_conn->query($query);
+            $result = $db_conn->query($query);
 
-        // Loop through cat names
-        //when user clicks on a cat it should lead to their cat profile
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                ?>
-        
-        <div class="card">
-            <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>" class="kitty-card">
-                <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
-                <p><?php echo $row['cat_name']; ?></p>
-            </a>
+            // Loop through cat names
+            //when user clicks on a cat it should lead to their cat profile
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+            
+            <div class="card">
+                <a href="cat_profile.php?cat_id=<?php echo urlencode($row['cat_id']); ?>" class="kitty-card">
+                    <img src="<?php echo $row['cat_img_src']; ?>" alt="<?php echo $row['cat_name']; ?>">
+                    <p><?php echo $row['cat_name']; ?></p>
+                </a>
+            </div>
+
+            <?php
+            }
+            } else {
+                // Display a message if there are no cat cards
+                echo "<p>No matching cat cards available.</p>";
+            }
+            // Close the database connection
+            $db_conn->close();
+            ?>
         </div>
-
-        <?php
-        }
-        } else {
-            // Display a message if there are no cat cards
-            echo "<p>No matching cat cards available.</p>";
-        }
-        // Close the database connection
-        $db_conn->close();
-        ?>
-    </div>
     <footer></footer>
     
 </body>
