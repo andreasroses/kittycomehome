@@ -20,7 +20,7 @@ session_start();
     <!--header image-->
     <div class="flex maincontainer">
         <div class="formBox">
-            <form action="./php-scripts/forgot_password.php" method="POST">
+            <form action="./php-scripts/forgot-password-pg.php" method="POST">
                 <table class="signupForm">
                     <tr>
                         <td colspan="2">
