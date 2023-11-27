@@ -27,11 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $pwd = $_POST["pwd"];
             $securityQuestionId = $_POST["security_question"];  
             $securityAnswer = $_POST["security_answer"];  
-            $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc,security_question_id, security_answer) VALUES ('$fname','$lname','$email', '$pwd','$readFile', '{$_POST["securityQuestion"]}', '{$_POST["securityAnswer"]}')";
+            $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$readFile')";
             
             if ($db_conn->query($sql) === TRUE) {
                 echo "User registered successfully!";
                 $user_id = $db_conn->insert_id;
+                //insert into account_security table
+                $sqlSecurity = "INSERT INTO account_security (account_id, security_question_id, security_answer) VALUES ('$user_id', '$securityQuestionId', '$securityAnswer')";
+                
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['fname'] = $fname;
                 $_SESSION['lname'] = $lname;
@@ -43,10 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 echo "Error adding security question and answer: " . $db_conn->error;
             }
         } else {
-            echo "Error adding user: " . $db_conn->error;
+            echo "Image upload failed.";
         }
-    }else {
-        die("Image upload failed.");
-}
+    } else {
+        die("Invalid request method.");
+    }
 
 ?>
