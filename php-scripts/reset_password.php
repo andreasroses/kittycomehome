@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate the user's answer to the security question
     if (validateSecurityAnswer($email, $securityQuestion, $userAnswer, $db_conn)) {
         // Update the user's password
-        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
         $sql = "UPDATE accounts SET account_password = '$hashedPassword' WHERE account_email = '$email'";
         
         if ($db_conn->query($sql) === TRUE) {
