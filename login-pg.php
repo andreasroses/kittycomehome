@@ -46,7 +46,7 @@
                         <td>
                             <label for="pwd">Password:</label>
                             <input class="form-control" type="password" id="pwd" name="pwd">
-                            <h4>Forgot password?</h4><br>
+                            <h4><a href="forgot-password-pg.php">Forgot password?</a></h4><br>
                             <div class="submit-button-container">
                                 <input class="list-form-btn" type="submit" value="Login">
                             </div>
