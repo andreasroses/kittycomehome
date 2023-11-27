@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Check if the security question and answer are set
         if ($securityQuestion !== null && $storedAnswer !== null) {
             // Display the security question
-            echo "<p>Security Question: " . getSecurityQuestion($securityQuestion) . "</p>";
+            echo "<p>Security Question: " . getSecurityQuestion($securityQuestion, $db_conn) . "</p>";
 
             // Allow the user to input the answer
             echo '<form action="./reset_password.php" method="POST">';
