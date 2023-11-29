@@ -5,12 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once("config.php");
 
     $email = $_POST["email"];
-    $sql = "SELECT * FROM accounts WHERE account_email = '$email'";
+    $sql = "SELECT security_questions_id, security_answer FROM accounts JOIN account_security USING(account_ID) WHERE account_email = '$email'";
     $result = $db_conn->query($sql);
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        $securityQuestion = $row['security_question_id'];
+        $securityQuestion = $row['security_questions_id'];
         $storedAnswer = $row['security_answer'];
 
         // Check if the security question and answer are set
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 function getSecurityQuestion($questionId, $db_conn) {
     $questionId = intval($questionId);  // Ensure that $questionId is an integer to prevent SQL injection
 
-    $sql = "SELECT security_question_text FROM account_security WHERE security_question_id = $questionId";
+    $sql = "SELECT security_question FROM security_questions WHERE security_question_id = $questionId";
     $result = $db_conn->query($sql);
 
     if ($result->num_rows == 1) {

@@ -24,9 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $fname = $_POST["fname"];
             $lname = $_POST["lname"];
             $email = $_POST["email"];
-            $pwd = $_POST["pwd"];
-            $securityQuestionId = $_POST["security_question"];  
-            $securityAnswer = $_POST["security_answer"];  
+            $pwd = $_POST["pwd"];  
+            $securityAnswer1 = $_POST["security_answer1"];  
+            $securityAnswer2 = $_POST["security_answer2"];  
+            $securityAnswer3 = $_POST["security_answer3"];  
             $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$readFile')";
             
             if ($db_conn->query($sql) === TRUE) {

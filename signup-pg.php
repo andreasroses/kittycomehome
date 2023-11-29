@@ -60,7 +60,7 @@
                 </tr>
                 <tr>
                 <td>
-                    <label for="security_question1">Security Question 1: What is your mother's maiden name?</label>
+                    <label for="security_question1">Security Question 1:</br> What is your mother's maiden name?</label>
                 </td>
                 <td>
                     <label for="security_answer1">Security Answer 1:</label>
@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="security_question2">Security Question 2: What was the name of your favorite teacher?</label>
+                    <label for="security_question2">Security Question 2:</br> What was the name of your favorite teacher?</label>
                 </td>
                 <td>
                     <label for="security_answer2">Security Answer 2:</label>
@@ -78,7 +78,7 @@
             </tr>
             <tr>
             <td>
-                    <label for="security_question3">Security Question 3: What was your childhood phone number including area code? (e.g., 000-000-0000)</label>
+                    <label for="security_question3">Security Question 3:</br> What was your childhood phone number including area code? (e.g., 000-000-0000)</label>
                 </td>
                 <td>
                     <label for="security_answer3">Security Answer 3:</label>
