@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!--header image-->
     <div class="flex maincontainer">
         <div class="formBox">
-            <form action="./reset_password_pg.php" method="POST">
+            <form action="./reset_password.php" method="POST">
                 <table class="signupForm">
                     <tr>
                         <td colspan="2">

@@ -7,7 +7,7 @@ if (isset($_SESSION['user_id'])) {
     $list = '<li><a href="listCat.php" class="nav-link">List a cat</a></li>';
 } else {
     // User is not logged in
-    $navbarLink = '<a href="login-pg.php" class="nav-link-end">Sign-up/Login</a>';
+    $navbarLink = '<a href="login.php" class="nav-link-end">Sign-up/Login</a>';
     $list = '';
 }
 ini_set('display_errors', 1);

@@ -1,5 +1,37 @@
 <?php
-    session_start();
+session_start();
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require_once("./php-scripts/config.php");
+    // get user data
+    $email = $_POST["email"];
+    $password = $_POST["pwd"];
+    $sql = "SELECT * FROM accounts WHERE account_email = '$email'";
+    $result = $db_conn->query($sql);
+    if ($result->num_rows == 1) {
+        // User found, check the password
+        $row = $result->fetch_assoc();
+        if ($password == $row["account_password"]) {
+            // Password is correct, log in the user
+            $_SESSION['user_id'] = $row['account_id'];
+            $_SESSION['fname'] = $row['account_fname'];
+            $_SESSION['lname'] = $row['account_lname'];
+            $_SESSION['pfpimg'] = $row['account_imgsrc'];
+            if($row['account_id'] == 1){
+                $_SESSION['isadmin'] = 1;
+            }
+            else{
+                $_SESSION['isadmin'] = 0;
+            }
+            // Redirect to the user's account page
+            header("Location: ../useraccount.php");
+            exit();
+        } else {
+            $error = "Invalid password";
+        }
+    } else {
+        $error = "User not found";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +54,7 @@
     <div class="flex maincontainer">
         <!-- <img id = "headerImg" src="https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg" alt="cute cat landscape image"> -->
         <div class="formBox">
-            <form action="./php-scripts/login.php" method="POST" id="login-form">
+            <form action="./login.php" method="POST" id="login-form">
                 <table class="loginForm">
                     <tr>
                         <td>
@@ -54,9 +86,9 @@
                     </tr>
                     <tr class="fixPadding">
                         <td>
-                        <p>New to KittyComeHome? <a href="signup-pg.php">Sign Up</a></p>
+                            <p>New to KittyComeHome? <a href="signup-pg.php">Sign Up</a></p>
                         </td>
-                        </tr>
+                    </tr>
                 </table>
             </form>
         </div>
