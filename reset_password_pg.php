@@ -20,25 +20,38 @@ session_start();
     <!--header image-->
     <div class="flex maincontainer">
         <div class="formBox">
-            <form action="./reset_password.php" method="POST">
+            <form action="./php-scripts/reset_password.php" method="POST">
                 <table class="signupForm">
                     <tr>
                         <td colspan="2">
                             <h1>Reset Password</h1>
                         </td>
                     </tr>
+                    <?php
+                        // Display any login error
+                        if (isset($error)) {
+                            echo "<tr><td><p>$error</p></td>
+                            </tr>";
+                        }
+                        ?>
                     <tr>
                         <td>
                             <label for="newPassword">New Password:</label>
-                            <input class="form-control" type="password" id="newPassword" name="newPassword" required>
+                            <input class="form-control" type="password" id="newPassword" name="newPassword" value="newPwd" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="confirmPassword">Confirm Password:</label>
-                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" required>
+                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" value="confirmPwd" required>
                         </td>
                     </tr>
+                    <?php
+                        if (isset($success)) {
+                            echo "<tr><td><p>$success</p></td>
+                            </tr>";
+                        }
+                        ?>
                     <tr>
                         <td>
                             <div class="submit-button-container">
@@ -47,9 +60,6 @@ session_start();
                         </td>
                     </tr>
                 </table>
-                <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>">
-                <input type="hidden" name="securityQuestion" value="<?php echo $_POST['securityQuestion']; ?>">
-                <input type="hidden" name="securityAnswer" value="<?php echo $_POST['securityAnswer']; ?>">
             </form>
         </div>
     </div>

@@ -27,6 +27,13 @@ session_start();
                             <h1>Forgot Password</h1>
                         </td>
                     </tr>
+                    <?php
+                        // Display any login error
+                        if (isset($error)) {
+                            echo "<tr><td><p>$error</p></td>
+                            </tr>";
+                        }
+                        ?>
                     <tr>
                         <td colspan="2">
                             <label for="email">Email:</label>
