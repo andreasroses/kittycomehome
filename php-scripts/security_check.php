@@ -25,7 +25,7 @@ function validateSecurityAnswer($email, $uA1, $uA2, $uA3, $dbconn)
     $count = 0;
     $sql = "SELECT security_answer FROM accounts JOIN account_security USING(account_ID) WHERE account_email = '$email' AND security_questions_id = 100";
     $result = $dbconn->query($sql);
-    if ($result->num_rows = 1) {
+    if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         if ($row["security_answer"] == $uA1) {
             $count++;
@@ -33,7 +33,7 @@ function validateSecurityAnswer($email, $uA1, $uA2, $uA3, $dbconn)
     }
     $sql = "SELECT security_answer FROM accounts JOIN account_security USING(account_ID) WHERE account_email = '$email' AND security_questions_id = 101";
     $result = $dbconn->query($sql);
-    if ($result->num_rows = 1) {
+    if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         if ($row["security_answer"] == $uA2) {
             $count++;
@@ -41,7 +41,7 @@ function validateSecurityAnswer($email, $uA1, $uA2, $uA3, $dbconn)
     }
     $sql = "SELECT security_answer FROM accounts JOIN account_security USING(account_ID) WHERE account_email = '$email' AND security_questions_id = 102";
     $result = $dbconn->query($sql);
-    if ($result->num_rows = 1) {
+    if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         if ($row["security_answer"] == $uA3) {
             $count++;

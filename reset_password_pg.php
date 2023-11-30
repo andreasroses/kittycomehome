@@ -1,5 +1,22 @@
 <?php
 session_start();
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require_once("./php-scripts/config.php");
+    $newPassword = $_POST["newPwd"];
+    $confirmPassword = $_POST["confirmPwd"];
+    $email = $_SESSION["tmpEmail"];
+    $sql = "UPDATE accounts SET account_password='$newPassword' WHERE account_email='$email'";
+    if ($newPassword == $confirmPassword) {
+        if ($db_conn->query($sql) === TRUE) {
+            unset($_SESSION["tmpEmail"]);
+            $success = "Password Updated. Redirecting now...";
+        } else {
+            $error = "Unknown Error: Password failed to be updated";
+        }
+    } else {
+        $error = "Passwords didn't match. Please try again";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +37,7 @@ session_start();
     <!--header image-->
     <div class="flex maincontainer">
         <div class="formBox">
-            <form action="./php-scripts/reset_password.php" method="POST">
+            <form action="./reset_password_pg.php" method="POST">
                 <table class="signupForm">
                     <tr>
                         <td colspan="2">
@@ -28,30 +45,36 @@ session_start();
                         </td>
                     </tr>
                     <?php
-                        // Display any login error
-                        if (isset($error)) {
-                            echo "<tr><td><p>$error</p></td>
+                    // Display any login error
+                    if (isset($error)) {
+                        echo "<tr><td><p>$error</p></td>
                             </tr>";
-                        }
-                        ?>
+                    }
+                    ?>
                     <tr>
                         <td>
-                            <label for="newPassword">New Password:</label>
-                            <input class="form-control" type="password" id="newPassword" name="newPassword" value="newPwd" required>
+                            <label for="newPwd">New Password:</label>
+                            <input class="form-control" type="password" id="newPassword" name="newPwd" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="confirmPassword">Confirm Password:</label>
-                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" value="confirmPwd" required>
+                            <label for="confirmPwd">Confirm Password:</label>
+                            <input class="form-control" type="password" id="confirmPassword" name="confirmPwd" required>
                         </td>
                     </tr>
                     <?php
-                        if (isset($success)) {
-                            echo "<tr><td><p>$success</p></td>
+                    if (isset($success)) {
+                        echo "<tr><td><p>$success</p></td>
                             </tr>";
-                        }
-                        ?>
+                            echo "<script>
+                            setTimeout(function() {
+                            window.location.href = '../login-pg.php';
+                            }, 2000); // Redirect after 2 seconds
+                            </script>";
+                            exit();
+                    }
+                    ?>
                     <tr>
                         <td>
                             <div class="submit-button-container">
