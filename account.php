@@ -28,7 +28,7 @@
     $account_id = isset($_GET['account_id']) ? mysqli_real_escape_string($db_conn, $_GET['account_id']) : '';
 
     if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $account_id){
-        header("Location: ./useraccount.php");
+        echo '<script>window.location.href="./useraccount.php"</script>';
     }
     // Fetch cat information based on the cat name
     $query = "SELECT * FROM accounts WHERE account_id = '$account_id'";
