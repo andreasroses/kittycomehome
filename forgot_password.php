@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
     else{
-        $error = "Security Questions not answered. Contact support.";
+        $error = "Security Questions not answered or email not found. Contact support.";
     }
 }
 ?>
