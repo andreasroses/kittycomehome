@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    require_once("/php-scripts/config.php");
+    require_once("./php-scripts/config.php");
 
     $email = $_POST["email"];
     $sql = "SELECT security_questions_id, security_answer FROM accounts JOIN account_security USING(account_ID) WHERE account_email = '$email'";
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($result->num_rows == 3) {
         $_SESSION['tmpEmail'] = $email;
-        header("Location: ../securityquestions.php");
+        header("Location: ./securityquestions.php");
         exit();
     }
     else{
