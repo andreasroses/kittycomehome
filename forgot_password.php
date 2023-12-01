@@ -1,5 +1,22 @@
 <?php
 session_start();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require_once("/php-scripts/config.php");
+
+    $email = $_POST["email"];
+    $sql = "SELECT security_questions_id, security_answer FROM accounts JOIN account_security USING(account_ID) WHERE account_email = '$email'";
+    $result = $db_conn->query($sql);
+
+    if ($result->num_rows == 3) {
+        $_SESSION['tmpEmail'] = $email;
+        header("Location: ../securityquestions.php");
+        exit();
+    }
+    else{
+        $error = "Security Questions not answered. Contact support.";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +37,7 @@ session_start();
     <!--header image-->
     <div class="flex maincontainer">
         <div class="formBox">
-            <form action="./php-scripts/forgot_password.php" method="POST">
+            <form action="./forgot_password.php" method="POST">
                 <table class="signupForm">
                     <tr>
                         <td colspan="2">
