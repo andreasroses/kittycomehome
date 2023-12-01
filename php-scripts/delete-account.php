@@ -46,6 +46,4 @@ if (isset($_SESSION['user_id']) && ($_SESSION['isadmin'] == 1 || $_SESSION['user
     // Destroy the session
     session_destroy();
     header("Location: ../index.php");
-} else {
-    echo "Access denied";
-}
+} 

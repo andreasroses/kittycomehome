@@ -32,9 +32,7 @@ $result = $db_conn->query($query);
 
 if (!$result) {
     die("Error in query: " . $db_conn->error);
-} else {
-    echo "Adoption form submitted successfully!";
-}
+} 
 
 // Close the database connection
 $db_conn->close();

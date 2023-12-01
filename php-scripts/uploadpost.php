@@ -16,7 +16,7 @@ $normalDir = './images/';
 $uploadFile = $uploadDir . basename($_FILES['postimg']['name']);
 $readFile = $normalDir . basename($_FILES['postimg']['name']);
 if (move_uploaded_file($_FILES['postimg']['tmp_name'], $uploadFile)) {
-    echo "Image uploaded successfully!";
+    
 } else {
     die("Image upload failed.");
 }
@@ -29,8 +29,6 @@ $result = $db_conn->query($query);
 
 if (!$result) {
     die("Error in query: " . $db_conn->error);
-} else {
-    echo "Foster cat information submitted successfully!";
 }
 
 // Close the database connection
