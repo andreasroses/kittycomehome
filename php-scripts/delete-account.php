@@ -36,7 +36,7 @@ if(isset($_SESSION['user_id']) && ($_SESSION['isadmin'] == 1 || $_SESSION['user_
         die("Error in query: " . $db_conn->error);
     }
     else{
-        $query = "DELETE FROM account WHERE account_id = '$account_id'";
+        $query = "DELETE FROM accounts WHERE account_id = '$account_id'";
         $result = $db_conn->query($query);
         if(!$result){
             die("Error in query: " . $db_conn->error);
