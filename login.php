@@ -26,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: ../useraccount.php");
             exit();
         } else {
-            $error = "Invalid password";
+            $error = "Invalid Credentials";
         }
     } else {
-        $error = "User not found";
+        $error = "Invalid Credentials";
     }
 }
 ?>

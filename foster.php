@@ -33,7 +33,11 @@
             <form method="GET" action="">
             <!-- Toggle input for favorited objects -->
             <select name="searchBy" id="searchByDropdown"class="search-dropdown">
-                <option value="favorited">Favorites</option>
+                <?php
+                if(isset($_SESSION['user_id'])){
+                    ?><option value="favorited">Favorites</option><?php
+                }
+                ?>
                 <option value="cat_Male">Male</option>
                 <option value="cat_Female">Female</option>
                 <option value="cat_isgoodwithcats">Good with Cats</option>
