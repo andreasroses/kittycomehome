@@ -111,7 +111,7 @@
             }
             } else {
                 // Display a message if there are no cat cards
-                echo "<p>No matching cat cards available.</p>";
+                echo '<h1 style="font-family: \'Playpen Sans\', fantasy; color: #3d3737; margin-left: 2em;">No results!</h1>';
             }
             // Close the database connection
             $db_conn->close();

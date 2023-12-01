@@ -59,6 +59,17 @@
                 <div>
                     <?php
                     if(isset($_SESSION['user_id'])){
+                        $account_id = $_SESSION['user_id'];
+                    }
+                    else{
+                        $account_id = -1;
+                    }
+                    $query = "SELECT * FROM favorite WHERE cat_id = '$cat_id' AND account_id = '$account_id'";
+                    $result = $db_conn->query($query);
+                    if(isset($_SESSION['user_id']) && $result->num_rows > 0){
+                        ?><button id="favoriteButton" class="list-form-btn" style="margin-bottom: 1em;" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Unfavorite</button><?php
+                    }
+                    else if(isset($_SESSION['user_id'])){
                         ?><button id="favoriteButton" class="list-form-btn" style="margin-bottom: 1em;" onclick="toggleFavorite(<?php echo $row['cat_id']; ?>)">Favorite</button><?php
                     }
                     ?>
