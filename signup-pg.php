@@ -110,8 +110,8 @@
                 </table>
             </form>
         </div>
+        <footer></footer>
     </div>
-    <footer class="footerabs"></footer>
 </body>
 
 </html>
