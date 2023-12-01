@@ -185,9 +185,10 @@ footer{
 .maincontainer{
 
     width: auto;
-    height: 500px;
-    background-image: url("https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg");
-    background-size: cover;
+    height: 700px;
+    background-image: url(/images/black-cat-banner.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
     justify-content: center;
     /* align-items: center; */
 }

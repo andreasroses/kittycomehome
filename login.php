@@ -49,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
-    </div>
     <!--header image-->
     <div class="flex maincontainer">
         <!-- <img id = "headerImg" src="https://i.pinimg.com/originals/12/84/a4/1284a4ee744be631e97a04d1934877d9.jpg" alt="cute cat landscape image"> -->

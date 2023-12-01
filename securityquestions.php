@@ -74,48 +74,49 @@ function validateSecurityAnswer($email, $uA1, $uA2, $uA3, $dbconn)
     </div>
 
     <!-- header image -->
-    <div>
-        <img src="images/cute-abyssinian-kittens-website-header.jpg" id="about-img">
-    </div>
-    <div>
-        <form action="./securityquestions.php" method="POST">
-            <table class="loginForm">
-                <tr>
-                    <td>
-                        <h1>Reset Password</h1>
-                    </td>
-                </tr>
-                <?php
-                // Display any login error
-                if (isset($error)) {
-                    echo "<tr><td><p>$error</p></td>
+    <div class="flex maincontainer">
+        <div class="formBox">
+            <form action="./securityquestions.php" method="POST">
+                <table class="loginForm">
+                    <tr>
+                        <td>
+                            <h1>Reset Password</h1>
+                        </td>
+                    </tr>
+                    <?php
+                    // Display any login error
+                    if (isset($error)) {
+                        echo "<tr><td><p>$error</p></td>
                             </tr>";
-                }
-                ?>
-                <tr>
-                    <td>
-                        <label for="security_answer1">What is your mother's maiden name?:</label>
-                        <input class="form-control" name="security_answer1" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="security_answer2">What was the name of your favorite teacher?:</label>
-                        <input class="form-control" name="security_answer2" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="security_answer3">What was your childhood phone number including area code? (e.g.,
-                            000-000-0000):</label>
-                        <input class="form-control" name="security_answer3" required><br>
-                        <div class="submit-button-container">
-                            <input class="list-form-btn" type="submit" value="Submit">
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                    }
+                    ?>
+                    <tr>
+                        <td>
+                            <label for="security_answer1">What is your mother's maiden name?:</label>
+                            <input class="form-control secInputs" name="security_answer1" required><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="security_answer2">What was the name of your favorite teacher?:</label>
+                            <input class="form-control secInputs" name="security_answer2" required><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="security_answer3">What was your childhood phone number including area code?
+                                (e.g.,
+                                000-000-0000):</label>
+                            <input class="form-control secInputs" name="security_answer3" required><br>
+                            <div class="submit-button-container">
+                                <input class="list-form-btn" type="submit" value="Submit">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </form>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -21,12 +21,11 @@
     <div class="flex">
         <?php include 'php-scripts/navbar.php'; ?>
     </div>
-    </div>
     <!--header image-->
     <div class="flex maincontainer">
         <div class="formBox">
             <form action="./php-scripts/signup.php" method="POST" enctype="multipart/form-data">
-                <table class="signupForm">
+                <table class="signupForm" id="signupMargin">
                     <tr>
                         <td colspan="2">
                             <h1>Sign Up</h1>

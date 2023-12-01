@@ -10,6 +10,7 @@
 .signupForm h2,h3,h4,h5,h6{
     text-align: center;
     color: #3d3737;
+    margin: 0;
 }
 
 .formButton{
@@ -31,9 +32,12 @@
     text-align: center;
 }
 
+#signupMargin{
+    margin-top: 50px;
+    
+}
+
 table.signupForm {
-    /* display: flex;
-    flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     background:#edadbb;
@@ -41,7 +45,7 @@ table.signupForm {
     border: 5px solid white;
     border-radius: 10px;
     font-size:12px;
-    height: fit-content;
+    min-height: fit-content;
     padding: 2em;
     padding-top: 1em;
     width:360px; 
@@ -58,14 +62,6 @@ table.signupForm input[type="submit"] {
     font-family: "Playpen Sans",sans-serif;
 }
 
-/* table.signupForm input[type="file"] {
-    color: #3d3737;
-    border: none;
-    border-radius: 5px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-family: "Playpen Sans",sans-serif;
-} */
 
 table.loginForm {
     display: flex;
@@ -116,4 +112,8 @@ tr.fixPadding>td {
 .signupForm label{
     text-align: left;
     display:block;
+}
+
+.secInputs {
+    padding: 0.375rem 2.75rem;
 }
