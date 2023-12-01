@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </tr>";
                             echo "<script>
                             setTimeout(function() {
-                            window.location.href = '../login-pg.php';
+                            window.location.href = '../login.php';
                             }, 2000); // Redirect after 2 seconds
                             </script>";
                             exit();
