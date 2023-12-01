@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $error = "Error adding security question and answer: " . $db_conn->error;
             }
         } else {
-            $error = "Image upload failed.";
+            $error = "Please select a valid profile photo.";
         }
     } else {
         $error = "Passwords don't match. Please try again.";
