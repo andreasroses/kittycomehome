@@ -1,18 +1,5 @@
 <?php
 session_start();
-
-function getFilename($uploadDir, $ogName)
-{
-    $num = 0;
-    $newFilename = $ogName;
-    while (file_exists($uploadDir . $newFilename)) {
-        $num++;
-        $newFilename = pathinfo($ogName, PATHINFO_FILENAME) . "_" . $num . "." . pathinfo($ogName, PATHINFO_EXTENSION);
-    }
-
-    return $newFilename;
-}
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once("config.php");
     $fname = $_POST["fname"];
@@ -29,11 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $readFile = $normalDir . basename($_FILES['profPic']['name']);
     if ($pwd == $confpwd) {
         if (move_uploaded_file($_FILES['profPic']['tmp_name'], $uploadFile)) {
-            echo "Image uploaded successfully!";
 
             $sql = "INSERT INTO accounts (account_fname,account_lname,account_email, account_password,account_imgsrc) VALUES ('$fname','$lname','$email', '$pwd','$readFile')";
             if ($db_conn->query($sql) === TRUE) {
-                echo "User registered successfully!";
                 $user_id = $db_conn->insert_id;
                 //insert into account_security table
                 $sqlSecurity = "INSERT INTO account_security (account_id, security_questions_id, security_answer) VALUES ('$user_id', 100, '$securityAnswer1')";
