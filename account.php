@@ -45,7 +45,6 @@
         <div class="left-column">
             <div class="cat-pfp-container">
                 <img src="<?php echo $row['account_imgsrc']?>">
-                <img class="heart-icon" src="./images/filled-heart.png">
             </div>
             <div class="cat-info-container">
                 <div>
