@@ -36,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 echo "User registered successfully!";
                 $user_id = $db_conn->insert_id;
                 //insert into account_security table
-                $sqlSecurity = "INSERT INTO account_security (account_id, security_questions_id, security_answer) VALUES ('$user_id', '$securityQuestionId', '$securityAnswer1')";
-                $sqlSecurity = "INSERT INTO account_security (account_id, security_questions_id, security_answer) VALUES ('$user_id', '$securityQuestionId', '$securityAnswer2')";
-                $sqlSecurity = "INSERT INTO account_security (account_id, security_questions_id, security_answer) VALUES ('$user_id', '$securityQuestionId', '$securityAnswer3')";
+                $sqlSecurity = "INSERT INTO account_security (account_id, security_questions_id, security_answer) VALUES ('$user_id', 100, '$securityAnswer1')";
+                $sqlSecurity = "INSERT INTO account_security (account_id, security_questions_id, security_answer) VALUES ('$user_id', 101, '$securityAnswer2')";
+                $sqlSecurity = "INSERT INTO account_security (account_id, security_questions_id, security_answer) VALUES ('$user_id', 102, '$securityAnswer3')";
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['fname'] = $fname;
                 $_SESSION['lname'] = $lname;

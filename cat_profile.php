@@ -99,7 +99,7 @@
         function toggleFavorite(catId) {
             // Check if the user is logged in
             <?php if (!isset($_SESSION['user_id'])) : ?>
-                window.location.href = "/login-pg.php";
+                window.location.href = "/login.php";
                 return;
             <?php endif; ?>
 

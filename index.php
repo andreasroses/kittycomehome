@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KittycomeHome</title>
+    <title>KittyComeHome</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     <div class="header_img">
         <img src="./images/cat-banner.jpeg" alt="A picture of a cute cat behind pink background.">
     </div>
-    <div><a href="foster.php" class ="home-sub-header">Available For Fostering/Adopting</a></div>
+    <div class="justify-content-center"><a href="foster.php" class="home-sub-header">Available For Fostering/Adopting</a></div>
     <!--Kitty carousel gallery-->
     <div class="gallery-container-carousel">
         <!--prev button-->
